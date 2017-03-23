@@ -24,12 +24,19 @@ function(input, output) {
                     ED.Score < input$edfilter[2] #&
                    # EDGE.Score > input$edgefilter[1] &
                    #EDGE.Score < input$edgefilter[2]
-                   ) %>%
-      rename(`Common name` = comName,
+                   )
+    if (input$sort_ed) {
+      if (input$grouping) {
+        out <- dplyr::arrange(out, Country, -ED.Score)
+      } else
+      out <- dplyr::arrange(out, -ED.Score)
+    }
+    out <- rename(out, `Common name` = comName,
             `Scientific name` = sciName,
             `ED Score` = ED.Score,
             `EDGE Score` = EDGE.Score,
             `EDGE Rank` = EDGE.Rank)
+
     return(out)
   } 
     else {

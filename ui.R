@@ -22,7 +22,8 @@ shinyUI(fluidPage(
       p("An email with a download link will be sent to you shortly after confirming the request (pressing 'Submit') through that link."),
       #hr(),
       checkboxInput('grouping', 'Group by country?', value = FALSE),
-            # checkboxInput('allbirds', 'Browse all bird species? (slow, only works if .csv file hasn\'t been loaded)', value = FALSE),
+      checkboxInput('sort_ed', 'Sort by ED Score?', value = FALSE),
+                  # checkboxInput('allbirds', 'Browse all bird species? (slow, only works if .csv file hasn\'t been loaded)', value = FALSE),
       # hr(),
       sliderInput('edfilter', 'ED Score range', min=0.5, max=73, value = c(0.5,73)),
       #sliderInput('edgefilter', 'EDGE Score range', min=0.5, max=7, value = c(0.5,7))
