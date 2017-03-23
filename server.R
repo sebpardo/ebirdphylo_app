@@ -7,17 +7,48 @@
 
 library(shiny)
 library(dplyr)
-#devtools::install_github('sebpardo/myebird')
 library(myebird)
 
 function(input, output) {
   output$phylo.results <- renderTable({
   if(!is.null(input$mydata)) {
     mydata <- ebirdclean(input$mydata$datapath)
-  edge <- myedge(mydata, edge.cutoff = 1000) %>% select(-sciName.edge)
-  return(edge)
-  } else {
-    return(data.frame(NULL))
-  }
+    if (input$grouping == TRUE) {
+      edgedat <- group_by(mydata, Country) %>%
+        do(myedge(., edge.cutoff = input$edgerankfilter))
+    } else {
+      edgedat <- myedge(mydata, edge.cutoff = input$edgerankfilter)
+    }
+  out <- edgedat %>% select(-sciName.edge) %>%
+      dplyr::filter(ED.Score > input$edfilter[1] &
+                    ED.Score < input$edfilter[2] #&
+                   # EDGE.Score > input$edgefilter[1] &
+                   #EDGE.Score < input$edgefilter[2]
+                   ) %>%
+      rename(`Common name` = comName,
+            `Scientific name` = sciName,
+            `ED Score` = ED.Score,
+            `EDGE Score` = EDGE.Score,
+            `EDGE Rank` = EDGE.Rank)
+    return(out)
+  } 
+    else {
+    # if (input$allbirds) {
+    #   out <- myebird::edge %>% select(-sciName.edge) %>%
+    #     dplyr::filter(ED.Score > input$edfilter[1] &
+    #                     ED.Score < input$edfilter[2] &
+    #                     EDGE.Score > input$edgefilter[1] &
+    #                     EDGE.Score < input$edgefilter[2]) %>%
+    #     rename(`Common name` = comName,
+    #            `Scientific name` = sciName,
+    #            `ED Score` = ED.Score,
+    #            `EDGE Score` = EDGE.Score,
+    #            `EDGE Rank` = EDGE.Rank)
+    #   return(out)
+    # } 
+    #  else {
+        return(data.frame(NULL))
+    #  }
+    }
   })
 }
