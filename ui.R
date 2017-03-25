@@ -27,7 +27,7 @@ shinyUI(fluidPage(
       # hr(),
       sliderInput('edfilter', 'ED Score range', min=0.5, max=73, value = c(0.5,73)),
       #sliderInput('edgefilter', 'EDGE Score range', min=0.5, max=7, value = c(0.5,7))
-      sliderInput('edgerankfilter', 'EDGE Rank cutoff', min=1, max=9993, step = 10, value = 1000)
+      sliderInput('edgerankfilter', 'EDGE Rank cutoff', min=50, max=10000, step = 50, value = 1000)
       ),
     mainPanel(
       titlePanel("ED and EDGE scores"),
