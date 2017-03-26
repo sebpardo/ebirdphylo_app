@@ -22,15 +22,19 @@ shinyUI(fluidPage(
       p("An email with a download link will be sent to you shortly after confirming the request (pressing 'Submit') through that link."),
       #hr(),
       checkboxInput('grouping', 'Group by country?', value = FALSE),
-      checkboxInput('sort_ed', 'Sort by ED Score?', value = FALSE),
-                  # checkboxInput('allbirds', 'Browse all bird species? (slow, only works if .csv file hasn\'t been loaded)', value = FALSE),
+      checkboxInput('sort_ed', 'Sort species by ED Score?', value = FALSE),
+      checkboxInput('pd', 'Calculate PD? (slow, wait a minute or so)', value = FALSE),
+                    # checkboxInput('allbirds', 'Browse all bird species? (slow, only works if .csv file hasn\'t been loaded)', value = FALSE),
       # hr(),
       sliderInput('edfilter', 'ED Score range', min=0.5, max=73, value = c(0.5,73)),
       #sliderInput('edgefilter', 'EDGE Score range', min=0.5, max=7, value = c(0.5,7))
-      sliderInput('edgerankfilter', 'EDGE Rank cutoff', min=50, max=10000, step = 50, value = 1000)
+      sliderInput('edgerankfilter', 'EDGE Rank cutoff', min=100, max=10000, step = 100, value = 1000)
       ),
     mainPanel(
       titlePanel("ED and EDGE scores"),
+      h3("Summary stats"),
+      tableOutput('summary.tab'),
+      h3("Details by species"),
       tableOutput('phylo.results')
       )
   )))
