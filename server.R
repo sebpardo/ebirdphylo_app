@@ -7,6 +7,10 @@
 library(shiny)
 library(dplyr)
 library(myebird)
+library(DT)
+library(shinythemes)
+ED<-as.data.frame(edge)
+ED
 
 function(input, output) {
   # save clean data as reactive object that can be used further down
@@ -86,4 +90,43 @@ function(input, output) {
         return(sumout)
     }
   })
+}
+function(input, output, session) {
+  ###Create selectable Original ED file from my ebird 
+  output$origTable <- DT::renderDataTable({
+    datatable(
+    ED,options=list(order=list(list(4,"asc")), columnDefs = list(list(visible=FALSE, targets=c(0,5)))),
+      selection = list(mode = "multiple")
+    )
+  })
+  
+  origTable_selected <- reactive(as.data.frame({
+    ids <- input$origTable_rows_selected
+    ED[ids,]
+  }))
+  
+  ###Render a new table with selected species
+  output$origTableSelected <- DT::renderDataTable({
+    datatable(
+      origTable_selected(),options=list(dom="t",order=list(list(4,"asc")),scrollY = '250px', paging = FALSE ,columnDefs = list(list(visible=FALSE, targets=c(0,5)))),
+      selection = list(mode = "multiple"),
+      caption = "Your EDGE species"
+    )
+  })
+  
+  ##Save the new table as csv.
+  output$downloadData = downloadHandler('myedge.csv', content = function(file) {
+    s = input$origTable_rows_selected
+    write.csv(ED[s, , drop = FALSE], file)
+  })
+  ###Obtain sum of TOP 5 birds
+  Edscore<-eventReactive(input$action,{
+      x2<- head(arrange(origTable_selected()),desc(EDGE.Score), n = 5)
+      x3<-x2 %>% 
+        summarise(sum(EDGE.Score),n = n())
+      x4<-round(x3,digits=2)
+      x5<-as.character(x4[1])})
+      
+  output$EDSCORE<-Edscore
+    
 }
