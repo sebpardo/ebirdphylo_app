@@ -6,13 +6,17 @@
 #
 
 library(shiny)
+library(shinythemes)
 # up file limit to 30 MB, default is 5 MB
 options(shiny.maxRequestSize=30*1024^2) 
 
-shinyUI(fluidPage(
-  sidebarLayout(
-    sidebarPanel(
-      titlePanel("Upload file", windowTitle = "ED and EDGE scores"),
+shinyUI(fluidPage(heme = shinytheme("cerulean"),navbarPage("EDGE APP",tabPanel("About EDGE Scores",titlePanel("What is the EDGE  score for birds?"),mainPanel("EDGE score is a measure of the rarity of a given bird based not only on each species distribution and level of threat, but also on how unique a species is based on the number of alive relatives. Abundant species that have many living close related species will have a low score. A critically endangered species that has few (or no) living relatives will have the highest scores. EDGE score can help to prioritize conservation efforts of the world’s rarest birds.  For more information visit http://edgeofexistence.org/birds/default.php")),
+                           tabPanel("Manually select species",sidebarLayout(
+  sidebarPanel(titlePanel("2-EDGE score calculator", windowTitle = ""),actionButton("action","Sum of my top 5 EDGE species:"),verbatimTextOutput("EDSCORE", placeholder = FALSE)
+  ,p("3-dowload a list of the selected species"),downloadButton("downloadData","Download my list")),mainPanel(titlePanel("1-Get your EDGE list by exploring and clicking species on the bottom list"),
+                                                            DT::dataTableOutput("origTableSelected"),
+                                                            DT::dataTableOutput("origTable")))
+),titlePanel("Upload file", windowTitle = "ED and EDGE scores"),
       fileInput('mydata', 'Specify location of your eBird data file ("MyEBirdData.csv")', 
                 accept=c('text/csv', '.csv')),
       tags$p("You can obtain a .csv file with all your eBird data by clicking on the following link (Make sure you're logged into eBird):"),
@@ -37,5 +41,5 @@ shinyUI(fluidPage(
       h3("Details by species"),
       tableOutput('phylo.results')
       )
-  )))
+  ))))
 
