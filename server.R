@@ -94,7 +94,7 @@ function(input, output) {
   ###Create selectable Original ED file from my ebird 
   output$origTable <- DT::renderDataTable({
     datatable(
-    ED,options = list(order=list(list(4,"asc")), 
+    ED, options = list(order = list(list(4, "des")), 
                       columnDefs = list(list(visible = FALSE, targets = c(0,5)))),
       selection = list(mode = "multiple")
     )
