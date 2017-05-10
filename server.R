@@ -94,7 +94,7 @@ function(input, output) {
   ###Create selectable Original ED file from my ebird 
   output$origTable <- DT::renderDataTable({
     datatable(
-    ED,colnames=c("Scientific.Name","Common.Name","EDGE.SCORE","EDGE.Rank","Hidden key for outdated names") options = list(order = list(list(4, "asc")), 
+    ED,colnames=c("Scientific.Name","Common.Name","EDGE.SCORE","EDGE.Rank","Hidden key for outdated names"), options = list(order = list(list(4, "asc")), 
                       columnDefs = list(list(visible = FALSE, targets = c(0,5)))),
       selection = list(mode = "multiple")
     )
@@ -113,7 +113,7 @@ function(input, output) {
                    scrollY = '250px', paging = FALSE ,
                    columnDefs = list(list(visible = FALSE, targets = c(5)))),
       selection = list(mode = "multiple"),
-      caption = "Your EDGE species",
+      caption = "My EDGE species list",
       callback=JS("table.on( 'order.dt search.dt', function () {
                                 table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
                                                 cell.innerHTML = i+1;});}).draw();"))
