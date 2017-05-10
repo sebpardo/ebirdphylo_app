@@ -103,12 +103,13 @@ shinyUI(fluidPage(
     tabPanel("Join the EDGE challenge!",
              mainPanel(
       p("EDGE score is a tool to prioritize conservation effort directed towards the world’s most unique and rare birds. Join the EDGE challenge by donating the sum of the EDGE score of the top 5 EDGE birds on your list. Your support of the London Zoological Society will help to fund grassroots conservation efforts directed towards the world’s most unique and most threatened birds, so future generations get a chance to add them to their list as well!"),
-      tags$p("Donate here:"),
-      tags$a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0","http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0"),
+      p("Donate", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("here."))),
+      br(),
       tags$p("More about EDGE scores:"),
       tags$a(href="http://edgeofexistence.org/birds/default.php","http://edgeofexistence.org/birds/default.php"),
-      tags$p("More about this app"),
-      tags$a("http://sebpardo.github.io/ebirdtrees/","http://sebpardo.github.io/ebirdtrees/"))) 
+      br(),br(),
+      tags$p("More about this app and ED scores:"),
+      tags$a(href="http://sebpardo.github.io/ebirdtrees/","http://sebpardo.github.io/ebirdtrees/"))) 
        )
      )
    )
