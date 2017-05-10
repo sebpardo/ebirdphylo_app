@@ -94,9 +94,10 @@ function(input, output) {
   ###Create selectable Original ED file from my ebird 
   output$origTable <- DT::renderDataTable({
     datatable(
-    ED,colnames=c("Scientific.Name","Common.Name","EDGE.SCORE","EDGE.Rank","Hidden key for outdated names"), options = list(order = list(list(4, "asc")), 
-                      columnDefs = list(list(visible = FALSE, targets = c(0,5)))),
-      selection = list(mode = "multiple")
+    ED, options = list(order = list(list(4, "desc")), 
+                      columnDefs = list(list(visible = FALSE, targets = c(0,3,6)))),
+      selection = list(mode = "multiple"),
+    colnames=c("","Scientific.Name","Common.Name","","EDGE.Score","EDGE.Rank","Hidden key for outdated names")
     )
   })
   
@@ -108,10 +109,10 @@ function(input, output) {
   ###Render a new table with selected species
   output$origTableSelected <- DT::renderDataTable({
     datatable(
-      origTable_selected(),colnames=c("My.Rank","Scientific.Name","Common.Name","EDGE.Score","EDGE.Rank","Hidden key for outdated names"),
-      options = list(dom = "t",order = list(list(4, "asc")),
+      origTable_selected(),colnames=c("My.Rank","Scientific.Name","Common.Name","","EDGE.Score","EDGE.Rank","Hidden key for outdated names"),
+      options = list(dom = "t",order = list(list(4, "des")),
                    scrollY = '250px', paging = FALSE ,
-                   columnDefs = list(list(visible = FALSE, targets = c(5)))),
+                   columnDefs = list(list(visible = FALSE, targets = c(3,6)))),
       selection = list(mode = "multiple"),
       caption = "My EDGE species list",
       callback=JS("table.on( 'order.dt search.dt', function () {
