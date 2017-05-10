@@ -113,7 +113,7 @@ function(input, output) {
                    scrollY = '250px', paging = FALSE ,
                    columnDefs = list(list(visible = FALSE, targets = c(0,5)))),
       selection = list(mode = "multiple"),
-      caption = "My EDGE species checklist"
+      caption = "Your EDGE species"
     )
   })
   
