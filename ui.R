@@ -17,22 +17,18 @@ shinyUI(fluidPage(
     "EDGE APP",
     tabPanel(
       "About EDGE Scores",
-      titlePanel("What is the EDGE score for birds?"),
+      sidebarPanel(img(src="edgetree2.png",height="100%",width="100%")),
+      titlePanel("Find out how rare and unique are the birds on your checklist with EDGE score!"),
       mainPanel(
-        "The Evolutionary Distinctive Globally Endangered (EDGE) score of a species is a measure of the rarity of a given bird based not only on each species distribution and level of threat (as indicated by the IUCN Red List), but also on how unique a species is based on the number of alive relatives (that is, its Evolutionary distinctiveness, or ED). Abundant species that have many living close related species will have a low score. A critically endangered species that has few (or no) living relatives will have the highest scores. EDGE score can help to prioritize conservation efforts of the world’s rarest birds.",
-br(),br(),
-"This web app allows you to obtain EDGE scores for bird species in your eBird checklists, or species entered manually from a list. Please click on one of the tabs above to choose whether to enter your data from eBird or manually.",
-br(),br(),
-"For more information visit:",br(),br(),
-tags$a(href = "http://edgeofexistence.org/birds/default.php",
-       "http://edgeofexistence.org/birds/default.php"),
-br(),
-tags$a(href = "http://sebpardo.github.io/ebirdtrees/",
-       "http://sebpardo.github.io/ebirdtrees/")
-    )),
-    
+        h4("How is EDGE score calculated?"),
+        p("EDGE scores have two components:"), 
+        p("1-Evolutionarly Distinctivness (ED Score) is how recently different species shared a common ancestor. A recently diverged species that has many close relatives has low Evolutionary Distinctiveness,like the gulls (blue branches in the diagram).Species that diverged early in their evoultion history and have few (or no) living relatives have a high ED score, like the Hoatzin (red branch)"),
+        p("2-How Globally Endangered a species is determined by population size and level of conservation threat (from the IUCN Red List). Abundant species with many close relatives have low EDGE scores, while critically endangered species that have few (or no) close relatives have the highest scores."), 
+        p("Species with high EDGE scores are often hard to find, and extremely unusual in the way they look or behave, making some of the most memorable lifers a birder has!"),
+        p("This web app allows you to determine which species on your life list have the highest EDGE scores. You can find this out in two different ways.  You can explore the full species list and enter your data manually in the first tab or if you have an eBird account, you can use the “eBird data” tab to upload your data."))),  
+        br(),br(),
     tabPanel(
-      "Via eBird",
+      "Upload your eBird data",
       sidebarLayout(
         sidebarPanel(
           titlePanel("Upload file", windowTitle = "ED and EDGE scores"),
@@ -85,7 +81,7 @@ tags$a(href = "http://sebpardo.github.io/ebirdtrees/",
     ),
     
     tabPanel(
-      "Manually select species",
+      "Explore and select species",
       sidebarLayout(
         sidebarPanel(
           titlePanel("2. EDGE score calculator", windowTitle = ""),
@@ -103,6 +99,16 @@ tags$a(href = "http://sebpardo.github.io/ebirdtrees/",
           DT::dataTableOutput("origTable")
         )
       )
-    )
-  )
-))
+    ),
+    tabPanel("Join the EDGE challenge!",
+             mainPanel(
+      p("EDGE score is a tool to prioritize conservation effort directed towards the world’s most unique and rare birds. Join the EDGE challenge by donating the sum of the EDGE score of the top 5 EDGE birds on your list. Your support of the London Zoological Society will help to fund grassroots conservation efforts directed towards the world’s most unique and most threatened birds, so future generations get a chance to add them to their list as well!"),
+      tags$p("Donate here:"),
+      tags$a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0","http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0"),
+      tags$p("More about EDGE scores:"),
+      tags$a(href="http://edgeofexistence.org/birds/default.php","http://edgeofexistence.org/birds/default.php"),
+      tags$p("More about this app"),
+      tags$a("http://sebpardo.github.io/ebirdtrees/","http://sebpardo.github.io/ebirdtrees/"))) 
+       )
+     )
+   )
