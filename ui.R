@@ -25,7 +25,11 @@ shinyUI(fluidPage(
         p("1. Evolutionarly Distinctivness (ED Score) is how unique a species is based on the number and distance of living relatives. A recently diverged species that has many close relatives has low Evolutionary Distinctiveness, like gulls (blue branches in the diagram). Species that diverged early in their evoultion history and have few (or no) living relatives have a high ED score, like the Hoatzin (red branch)"),
         p("2. How Globally Endangered a species is determined by population size and level of conservation threat (from the IUCN Red List). Abundant species with many close relatives have low EDGE scores, while critically endangered species that have few (or no) close relatives have the highest scores."), 
         p("Species with high EDGE scores are often hard to find, and extremely unusual in the way they look or behave, making some of the most memorable lifers a birder can observe!"),
-        p("This web app allows you to determine which species on your life list have the highest EDGE scores. You can find this out in two different ways. You can explore the full species list and enter your data manually in the first tab or if you have an eBird account, you can use the “Upload your eBird data” tab to obtain EDGE scores directly from eBird."))),  
+        p("This web app allows you to determine which species on your life list have the highest EDGE scores.  
+           You can find out in two different ways. 
+           If you have an eBird account, you can use the “Upload your eBird data” tab to obtain EDGE scores directly from your eBird checklist. 
+           If you don’t have an ebird checklist, go to the “Explore and select species tab”, where you can select species form a list to create your own EDGE checklist")
+         p("You can also calculate the Phylogenetic Distance of your checklist (PD). PD is the sum of all the tree branches (in Million Years), in the tree created by your checklist. The red and blue branches in the diagram, if your checklist only has the Hoatzin and two gulls")),  
         br(),br(),
     tabPanel(
       "Upload your eBird data",
