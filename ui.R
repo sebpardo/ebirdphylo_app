@@ -90,14 +90,16 @@ shinyUI(fluidPage(
         sidebarPanel(
           titlePanel("", windowTitle = ""),
           p("Use the little triangles on top of each column to sort by name, rank, ED score etc."), 
-          p("Filter species by clicking on the filters on top of each column, (set to -All- by default)"),
+          p("Search and filter species usinng the boxes on top of each column"),
           p("Create your EDGE checklist by clicking on species"),
-          p("You can dowload your EDGE cheklist with the download button"),
-          verbatimTextOutput("EDSCORE", placeholder = FALSE)
-          ,
-          p("3. dowload a list of the selected species"),
-          downloadButton("downloadData", "Download my list")
-        ),
+          p("You can dowload your EDGE cheklist with the button below"),
+          p(" "),
+          downloadButton("downloadData", "Download my checklist"),
+          p(" "),
+          actionButton("action", "Get PD score(slow, wait a minute...)"),
+          p(""),
+          p("This means that the combined phylogenetic distance of all the species in your checklist encompasses"),
+          p(verbatimTextOutput("pd2", placeholder = FALSE),"Million years of evolution!")),
         mainPanel(
           titlePanel(
             "Explore the bottom table and click on species to create your EDGE checklist"
