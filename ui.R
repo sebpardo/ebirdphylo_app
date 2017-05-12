@@ -29,7 +29,7 @@ shinyUI(fluidPage(
            You can find out in two different ways. 
            If you have an eBird account, you can use the “Upload your eBird data” tab to obtain EDGE scores directly from your eBird checklist. 
            If you don’t have an ebird checklist, go to the “Explore and select species tab”, where you can select species form a list to create your own EDGE checklist")
-         p("You can also calculate the Phylogenetic Distance of your checklist (PD). PD is the sum of all the tree branches (in Million Years), in the tree created by your checklist. The red and blue branches in the diagram, if your checklist only has the Hoatzin and two gulls")),  
+         p("You can also calculate the Phylogenetic Distance of your checklist (PD). PD is the sum of all the tree branches (in Million Years), in the tree created by your checklist. The red and blue branches in the diagram, if your checklist only has the Hoatzin and two gulls."))),  
         br(),br(),
     tabPanel(
       "Upload your eBird data",
@@ -88,8 +88,11 @@ shinyUI(fluidPage(
       "Explore and select species",
       sidebarLayout(
         sidebarPanel(
-          titlePanel("2. EDGE score calculator", windowTitle = ""),
-          actionButton("action", "Sum of my top 5 EDGE species:"),
+          titlePanel("", windowTitle = ""),
+          p("Use the little triangles on top of each column to sort by name, rank, ED score etc."), 
+          p("Filter species by clicking on the filters on top of each column, (set to -All- by default)"),
+          p("Create your EDGE checklist by clicking on species"),
+          p("You can dowload your EDGE cheklist with the download button"),
           verbatimTextOutput("EDSCORE", placeholder = FALSE)
           ,
           p("3. dowload a list of the selected species"),
@@ -97,7 +100,7 @@ shinyUI(fluidPage(
         ),
         mainPanel(
           titlePanel(
-            "1. Manually select species from the list below"
+            "Explore the bottom table and click on species to create your EDGE checklist"
           ),
           DT::dataTableOutput("origTableSelected"),
           DT::dataTableOutput("origTable")
