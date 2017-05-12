@@ -94,11 +94,12 @@ function(input, output) {
   ###Create selectable Original ED file from my ebird 
   output$origTable <- DT::renderDataTable({
     datatable(
-    ED, options = list(order = list(list(4, "desc")), 
-                      columnDefs = list(list(visible = FALSE, targets = c(0,3,6)))),
-      selection = list(mode = "multiple"),
-    colnames=c("","Scientific.Name","Common.Name","","EDGE.Score","EDGE.Rank","Hidden key for outdated names")
-    )
+    ED, options = list(pageLength=10,order = list(list(4, "desc")), 
+                      columnDefs = list(list(visible = FALSE, targets = c(0,6)))),
+    selection = list(mode = "multiple"),
+    filter=list(position="top",clear=FALSE,plain=TRUE), 
+    colnames=c("","Scientific Name","Common Name","ED Score","EDGE Score","EDGE Rank","Hidden key for outdated names")
+    ) %>% formatRound(c("ED.Score","EDGE.Score"),digits=3)
   })
   
   origTable_selected <- reactive(as.data.frame({
@@ -109,15 +110,16 @@ function(input, output) {
   ###Render a new table with selected species
   output$origTableSelected <- DT::renderDataTable({
     datatable(
-      origTable_selected(),colnames=c("My.Rank","Scientific.Name","Common.Name","","EDGE.Score","EDGE.Rank","Hidden key for outdated names"),
+      origTable_selected(),colnames=c("My Ranking","Scientific Name","Common Name","ED Score","EDGE Score","EDGE Rank","Hidden key for outdated names"),
       options = list(dom = "t",order = list(list(4, "des")),
                    scrollY = '250px', paging = FALSE ,
-                   columnDefs = list(list(visible = FALSE, targets = c(3,6)))),
+                   columnDefs = list(list(visible = FALSE, targets = c(6)))),
       selection = list(mode = "multiple"),
-      caption = "My EDGE species list",
+      caption = "My EDGE checklist",
       callback=JS("table.on( 'order.dt search.dt', function () {
                                 table.column(0, {search:'applied', order:'applied'}).nodes().each( function (cell, i) {
-                                                cell.innerHTML = i+1;});}).draw();"))
+                                                cell.innerHTML = i+1;});}).draw();")
+      ) %>% formatRound(c("ED.Score","EDGE.Score"),digits=3)
   
   })
   
@@ -126,6 +128,14 @@ function(input, output) {
     s <- input$origTable_rows_selected
     write.csv(ED[s, , drop = FALSE], file)
   })
+  
+  ###Obtain PD2###
+  pd2<-eventReactive(input$action,{
+    pd2b<-mypd(origTable_selected(), ntrees = 5)
+  pd2c<-as.character(round(pd2b[2],digits=2))
+  })
+  output$pd2<-pd2
+  
   ###Obtain sum of TOP 5 birds
   Edscore <- eventReactive(input$action, {
       x2 <- head(arrange(origTable_selected()),desc(EDGE.Score), n = 5)
