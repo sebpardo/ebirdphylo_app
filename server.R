@@ -55,6 +55,20 @@ function(input, output) {
                     `EDGE Rank` = EDGE.Rank)
     }
   })
+    ####Calculates top5 from ebird data
+  
+  Edscore2 <- eventReactive(input$action3, {
+    y2 <- head(arrange(edgedat()),desc(EDGE.Score), n = 5)
+    y3<-y2 %>% 
+      summarise(sum(EDGE.Score),n = n())
+    y4<-round(y3,digits=2)
+    y5<-as.character(y4[1])})
+  
+  output$EDSCORE2<-Edscore2
+  
+  
+  
+  
   # PD is calculated in this renderTable
   output$summary.tab <- renderTable({
     if(!is.null(input$mydata)) {
@@ -137,7 +151,7 @@ function(input, output) {
   output$pd2<-pd2
   
   ###Obtain sum of TOP 5 birds
-  Edscore <- eventReactive(input$action, {
+  Edscore1 <- eventReactive(input$action2, {
       x2 <- head(arrange(origTable_selected()),desc(EDGE.Score), n = 5)
       x3<-x2 %>% 
         summarise(sum(EDGE.Score),n = n())
