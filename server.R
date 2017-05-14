@@ -158,6 +158,6 @@ function(input, output) {
       x4<-round(x3,digits=2)
       x5<-as.character(x4[1])})
       
-  output$EDSCORE<-Edscore
+  output$EDSCORE1<-Edscore1
     
 }
