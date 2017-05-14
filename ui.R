@@ -113,7 +113,7 @@ shinyUI(fluidPage(
              sidebarLayout(
                sidebarPanel(width=4,
                  titlePanel("Join the EDGE challenge", windowTitle = ""),
-                 p("EDGE challenge by donating the sum of the EDGE score of the top 5 EDGE birds on your list, obtain it by clicking on the buttons below"),
+                 p("You can help the bird by donating the sum of the top 5 EDGE scores on your checklist. Click one of the buttons below to find out your score"),
                  actionButton("action2", "Manually entered checklists"),
                  actionButton("action3", "eBird checklists"),
                  verbatimTextOutput("EDSCORE1", placeholder = FALSE),
