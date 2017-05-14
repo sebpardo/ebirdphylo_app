@@ -109,16 +109,23 @@ shinyUI(fluidPage(
         )
       )
     ),
-    tabPanel("Join the EDGE challenge!",
+    tabPanel("Help the birds!",
+             sidebarLayout(
+               sidebarPanel(width=4,
+                 titlePanel("Join the EDGE challenge", windowTitle = ""),
+                 p("EDGE challenge by donating the sum of the EDGE score of the top 5 EDGE birds on your list, obtain it by clicking on the buttons below"),
+                 actionButton("action2", "Manually entered checklists"),
+                 actionButton("action3", "eBird checklists"),
+                 verbatimTextOutput("EDSCORE1", placeholder = FALSE),
+                 verbatimTextOutput("EDSCORE2", placeholder = FALSE),
+                 br(),br(),
+               p("More about EDGE scores:", a(href="http://edgeofexistence.org/birds/default.php",strong("here."))),
+               br(),
+               p("More about this app and ED scores:",a(href="http://sebpardo.github.io/ebirdtrees/",strong("here.")))),
              mainPanel(
-      p("EDGE score is a tool to prioritize conservation effort directed towards the world’s most unique and rare birds. Join the EDGE challenge by donating the sum of the EDGE score of the top 5 EDGE birds on your list. Your support of the London Zoological Society will help to fund grassroots conservation efforts directed towards the world’s most unique and most threatened birds, so future generations get a chance to add them to their list as well!"),
-      p("Donate", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("here."))),
-      br(),
-      tags$p("More about EDGE scores:"),
-      tags$a(href="http://edgeofexistence.org/birds/default.php","http://edgeofexistence.org/birds/default.php"),
-      br(),br(),
-      tags$p("More about this app and ED scores:"),
-      tags$a(href="http://sebpardo.github.io/ebirdtrees/","http://sebpardo.github.io/ebirdtrees/"))) 
-       )
-     )
-   )
+               p("EDGE score is a tool to prioritize conservation effort directed towards the world’s most unique and rare birds. Your support of the London Zoological Society will help to fund grassroots conservation efforts directed towards the world’s most unique and most threatened birds, so future generations get a chance to add them to their list as well!"),
+               p("Donate", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("here."))),
+               img(src="GiantIbis.jpeg",height="100%",width="100%"),
+               p("The Giant Ibis (Thamantibis gigantea or Pseudibis gigantea, depending on who you ask) is the bird species with the highest EDGE score. Illustration by Henrik Grönvold - 1911 / Public Domain")
+)))
+    )))
