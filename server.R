@@ -64,7 +64,9 @@ function(input, output) {
     # } else {
     #   y1 <- edgedat()
     # }
-    y1 <- edgedat() %>% ungroup
+    
+    # distinct() needed to remove duplicates when grouped by country
+    y1 <- edgedat() %>% ungroup %>% distinct(sciName, .keep_all = TRUE)
     
     y2 <- arrange(y1, desc(EDGE.Score))
     y3 <- y2 %>% top_n(n = 5, wt = EDGE.Score) 
