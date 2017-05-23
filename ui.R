@@ -25,7 +25,11 @@ shinyUI(fluidPage(
         p("1. Evolutionarly Distinctivness (ED Score) is how unique a species is based on the number and distance of living relatives. A recently diverged species that has many close relatives has low Evolutionary Distinctiveness, like gulls (blue branches in the diagram). Species that diverged early in their evoultion history and have few (or no) living relatives have a high ED score, like the Hoatzin (red branch)"),
         p("2. How Globally Endangered a species is determined by population size and level of conservation threat (from the IUCN Red List). Abundant species with many close relatives have low EDGE scores, while critically endangered species that have few (or no) close relatives have the highest scores."), 
         p("Species with high EDGE scores are often hard to find, and extremely unusual in the way they look or behave, making some of the most memorable lifers a birder can observe!"),
-        p("This web app allows you to determine which species on your life list have the highest EDGE scores. You can find this out in two different ways. You can explore the full species list and enter your data manually in the first tab or if you have an eBird account, you can use the “Upload your eBird data” tab to obtain EDGE scores directly from eBird."))),  
+        p("This web app allows you to determine which species on your life list have the highest EDGE scores.  
+           You can find out in two different ways. 
+           If you have an eBird account, you can use the “Upload your eBird data” tab to obtain EDGE scores directly from your eBird checklist. 
+           If you don’t have an ebird checklist, go to the “Explore and select species tab”, where you can select species form a list to create your own EDGE checklist"),
+         p("You can also calculate the Phylogenetic Distance of your checklist (PD). PD is the sum of all the tree branches (in Million Years), in the tree created by your checklist. The red and blue branches in the diagram, if your checklist only has the Hoatzin and two gulls."))),  
         br(),br(),
     tabPanel(
       "Upload your eBird data",
@@ -84,32 +88,44 @@ shinyUI(fluidPage(
       "Explore and select species",
       sidebarLayout(
         sidebarPanel(
-          titlePanel("2. EDGE score calculator", windowTitle = ""),
-          actionButton("action", "Sum of my top 5 EDGE species:"),
-          verbatimTextOutput("EDSCORE", placeholder = FALSE)
-          ,
-          p("3. dowload a list of the selected species"),
-          downloadButton("downloadData", "Download my list")
-        ),
+          titlePanel("", windowTitle = ""),
+          p("Use the little triangles on top of each column to sort by name, rank, ED score etc."), 
+          p("Search and filter species usinng the boxes on top of each column"),
+          p("Create your EDGE checklist by clicking on species"),
+          p("You can dowload your EDGE cheklist with the button below"),
+          p(" "),
+          downloadButton("downloadData", "Download my checklist"),
+          p(" "),
+          actionButton("action", "Get PD score(slow, wait a minute...)"),
+          p(""),
+          p("This means that the combined phylogenetic distance of all the species in your checklist encompasses"),
+          p(verbatimTextOutput("pd2", placeholder = FALSE),"Million years of evolution!")),
         mainPanel(
           titlePanel(
-            "1. Manually select species from the list below"
+            "Explore the bottom table and click on species to create your EDGE checklist"
           ),
           DT::dataTableOutput("origTableSelected"),
           DT::dataTableOutput("origTable")
         )
       )
     ),
-    tabPanel("Join the EDGE challenge!",
+    tabPanel("Help the birds!",
+             sidebarLayout(
+               sidebarPanel(width=4,
+                 titlePanel("Join the EDGE challenge", windowTitle = ""),
+                 p("You can help the bird by donating the sum of the top 5 EDGE scores on your checklist. Click one of the buttons below to find out your score"),
+                 actionButton("action2", "Manually entered checklists"),
+                 actionButton("action3", "eBird checklists"),
+                 verbatimTextOutput("EDSCORE1", placeholder = FALSE),
+                 verbatimTextOutput("EDSCORE2", placeholder = FALSE),
+                 br(),br(),
+               p("More about EDGE scores:", a(href="http://edgeofexistence.org/birds/default.php",strong("here."))),
+               br(),
+               p("More about this app and ED scores:",a(href="http://sebpardo.github.io/ebirdtrees/",strong("here.")))),
              mainPanel(
-      p("EDGE score is a tool to prioritize conservation effort directed towards the world’s most unique and rare birds. Join the EDGE challenge by donating the sum of the EDGE score of the top 5 EDGE birds on your list. Your support of the London Zoological Society will help to fund grassroots conservation efforts directed towards the world’s most unique and most threatened birds, so future generations get a chance to add them to their list as well!"),
-      p("Donate", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("here."))),
-      br(),
-      tags$p("More about EDGE scores:"),
-      tags$a(href="http://edgeofexistence.org/birds/default.php","http://edgeofexistence.org/birds/default.php"),
-      br(),br(),
-      tags$p("More about this app and ED scores:"),
-      tags$a(href="http://sebpardo.github.io/ebirdtrees/","http://sebpardo.github.io/ebirdtrees/"))) 
-       )
-     )
-   )
+               p("EDGE score is a tool to prioritize conservation effort directed towards the world’s most unique and rare birds. Your support of the London Zoological Society will help to fund grassroots conservation efforts directed towards the world’s most unique and most threatened birds, so future generations get a chance to add them to their list as well!"),
+               p("Donate", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("here."))),
+               img(src="GiantIbis.jpeg",height="100%",width="100%"),
+               p("The Giant Ibis (Thamantibis gigantea or Pseudibis gigantea, depending on who you ask) is the bird species with the highest EDGE score. Illustration by Henrik Grönvold - 1911 / Public Domain")
+)))
+    )))
