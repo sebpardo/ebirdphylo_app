@@ -58,13 +58,22 @@ function(input, output) {
     ####Calculates top5 from ebird data
   
   Edscore2 <- eventReactive(input$action3, {
-    y2 <- head(arrange(edgedat()),desc(EDGE.Score), n = 5)
-    y3<-y2 %>% 
-      summarise(sum(EDGE.Score),n = n())
-    y4<-round(y3,digits=2)
-    y5<-as.character(y4[1])})
+    ## to attempt to estumate top5 for each country
+    # if (input$grouping) {
+    #   y1 <- group_by(edgedat(), Country)
+    # } else {
+    #   y1 <- edgedat()
+    # }
+    y1 <- edgedat() %>% ungroup
+    
+    y2 <- arrange(y1, desc(EDGE.Score))
+    y3 <- y2 %>% top_n(n = 5, wt = EDGE.Score) 
+    y4 <- y3 %>% summarise(sum = sum(EDGE.Score) %>% 
+                             round(digits = 2))
+    y5 <- as.character(y4[1])
+    })
   
-  output$EDSCORE2<-Edscore2
+  output$EDSCORE2 <- Edscore2
   
   
   
