@@ -31,6 +31,9 @@ shinyUI(fluidPage(
            If you don’t have an ebird checklist, go to the “Explore and select species tab”, where you can select species form a list to create your own EDGE checklist"),
          p("You can also calculate the Phylogenetic Distance of your checklist (PD). PD is the sum of all the tree branches (in Million Years), in the tree created by your checklist. The red and blue branches in the diagram, if your checklist only has the Hoatzin and two gulls."))),  
         br(),br(),
+    
+    ### New tab
+    
     tabPanel(
       "Upload your eBird data",
       sidebarLayout(
@@ -84,6 +87,8 @@ shinyUI(fluidPage(
       )
     ),
     
+    ### New tab
+    
     tabPanel(
       "Explore and select species",
       sidebarLayout(
@@ -109,6 +114,9 @@ shinyUI(fluidPage(
         )
       )
     ),
+    
+    ### New tab
+    
     tabPanel("Help the birds!",
              sidebarLayout(
                sidebarPanel(width=4,
