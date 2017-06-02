@@ -36,7 +36,7 @@ function(input, output) {
       return(data.frame(NULL))
     }
   })
-  output$phylo.results <- renderTable({
+  phyres <- reactive({
     if(!is.null(input$mydata)) {
       out <- edgedat() %>% select(-sciName.edge) %>%
         dplyr::filter(EDGE.Rank <= input$edgerankfilter) %>%
@@ -55,8 +55,11 @@ function(input, output) {
                     `EDGE Rank` = EDGE.Rank)
     }
   })
-    ####Calculates top5 from ebird data
   
+  output$phylo.results <- DT::renderDataTable(phyres())
+  
+  
+  # Calculates sum of Top 5 EDGE species from eBird data
   Edscore2 <- eventReactive(input$action3, {
     ## to attempt to estumate top5 for each country
     # if (input$grouping) {
@@ -73,7 +76,7 @@ function(input, output) {
     y4 <- y3 %>% summarise(sum = sum(EDGE.Score) %>% 
                              round(digits = 2))
     y5 <- as.character(y4[1])
-    })
+  })
   
   output$EDSCORE2 <- Edscore2
   
@@ -116,6 +119,9 @@ function(input, output) {
     }
   })
 
+
+
+  
   ###Create selectable Original ED file from my ebird 
   output$origTable <- DT::renderDataTable({
     datatable(

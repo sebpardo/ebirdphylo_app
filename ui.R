@@ -82,7 +82,7 @@ shinyUI(fluidPage(
           h3("Summary stats"),
           tableOutput('summary.tab'),
           h3("Details by species"),
-          tableOutput('phylo.results')
+          DT::dataTableOutput('phylo.results')
         )
       )
     ),
