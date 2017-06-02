@@ -56,7 +56,12 @@ function(input, output) {
     }
   })
   
-  output$phylo.results <- DT::renderDataTable(phyres())
+  output$phylo.results <- DT::renderDataTable(
+    datatable(phyres(),
+              options = list(pageLength = 10, order = list(list(4, "desc")), 
+                             columnDefs = list(list(visible = FALSE, targets = c(0)))),
+              filter = list(position="top", clear=FALSE, plain=TRUE)
+    ))
   
   
   # Calculates sum of Top 5 EDGE species from eBird data
