@@ -54,7 +54,9 @@ function(input, output) {
   
   output$phylo.results <- DT::renderDataTable(
     datatable(phyres(),
-              options = list(pageLength = 10, order = list(list(4, "desc")), 
+              options = list(pageLength = 50, 
+                             lengthMenu = list(c(10, 25, 50, 100, 500, -1), c(10, 25, 50, 100, 500, "All")),
+                             order = list(list(4, "desc")), 
                              columnDefs = list(list(visible = FALSE, targets = c(0)))),
               filter = list(position="top", clear=FALSE, plain=TRUE)
     ))
