@@ -36,18 +36,14 @@ function(input, output) {
       return(data.frame(NULL))
     }
   })
-  output$phylo.results <- renderTable({
+  phyres <- reactive({
     if(!is.null(input$mydata)) {
-      out <- edgedat() %>% select(-sciName.edge) %>%
-        dplyr::filter(EDGE.Rank <= input$edgerankfilter) %>%
-        dplyr::filter(ED.Score > input$edfilter[1] &
-                        ED.Score < input$edfilter[2])
-      if (input$sort_ed) {
-        if (input$grouping) {
+      out <- edgedat() %>% select(-sciName.edge)
+      if (input$grouping) {
           out <- dplyr::arrange(out, Country, -ED.Score)
-        } else
+        } else {
           out <- dplyr::arrange(out, -ED.Score)
-      }
+        }  
       out <- rename(out, `Common name` = comName,
                     `Scientific name` = sciName,
                     `ED Score` = ED.Score,
@@ -55,16 +51,37 @@ function(input, output) {
                     `EDGE Rank` = EDGE.Rank)
     }
   })
-    ####Calculates top5 from ebird data
   
+  output$phylo.results <- DT::renderDataTable(
+    datatable(phyres(),
+              options = list(pageLength = 50, 
+                             lengthMenu = list(c(10, 25, 50, 100, 500, -1), c(10, 25, 50, 100, 500, "All")),
+                             order = list(list(4, "desc")), 
+                             columnDefs = list(list(visible = FALSE, targets = c(0)))),
+              filter = list(position="top", clear=FALSE, plain=TRUE)
+    ))
+  
+  
+  # Calculates sum of Top 5 EDGE species from eBird data
   Edscore2 <- eventReactive(input$action3, {
-    y2 <- head(arrange(edgedat()),desc(EDGE.Score), n = 5)
-    y3<-y2 %>% 
-      summarise(sum(EDGE.Score),n = n())
-    y4<-round(y3,digits=2)
-    y5<-as.character(y4[1])})
+    ## to attempt to estumate top5 for each country
+    # if (input$grouping) {
+    #   y1 <- group_by(edgedat(), Country)
+    # } else {
+    #   y1 <- edgedat()
+    # }
+    
+    # distinct() needed to remove duplicates when grouped by country
+    y1 <- edgedat() %>% ungroup %>% distinct(sciName, .keep_all = TRUE)
+    
+    y2 <- arrange(y1, desc(EDGE.Score))
+    y3 <- y2 %>% top_n(n = 5, wt = EDGE.Score) 
+    y4 <- y3 %>% summarise(sum = sum(EDGE.Score) %>% 
+                             round(digits = 2))
+    y5 <- as.character(y4[1])
+  })
   
-  output$EDSCORE2<-Edscore2
+  output$EDSCORE2 <- Edscore2
   
   
   
@@ -105,6 +122,9 @@ function(input, output) {
     }
   })
 
+
+
+  
   ###Create selectable Original ED file from my ebird 
   output$origTable <- DT::renderDataTable({
     datatable(
