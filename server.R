@@ -38,16 +38,12 @@ function(input, output) {
   })
   phyres <- reactive({
     if(!is.null(input$mydata)) {
-      out <- edgedat() %>% select(-sciName.edge) %>%
-        dplyr::filter(EDGE.Rank <= input$edgerankfilter) %>%
-        dplyr::filter(ED.Score > input$edfilter[1] &
-                        ED.Score < input$edfilter[2])
-      if (input$sort_ed) {
-        if (input$grouping) {
+      out <- edgedat() %>% select(-sciName.edge)
+      if (input$grouping) {
           out <- dplyr::arrange(out, Country, -ED.Score)
-        } else
+        } else {
           out <- dplyr::arrange(out, -ED.Score)
-      }
+        }  
       out <- rename(out, `Common name` = comName,
                     `Scientific name` = sciName,
                     `ED Score` = ED.Score,
