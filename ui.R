@@ -18,7 +18,7 @@ shinyUI(fluidPage(
     tabPanel(
       "About EDGE Scores",
       sidebarPanel(img(src="edgetree2.png",height="100%",width="100%")),
-      titlePanel("Find out how rare and unique are the birds on your checklist with EDGE score!"),
+      titlePanel("How unique and rare are the birds on your checklist?"),
       mainPanel(
         h4("ED and EDGE scores quantify uniqueness and rarity"),
         p(""), 
