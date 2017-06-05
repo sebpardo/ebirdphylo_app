@@ -20,16 +20,16 @@ shinyUI(fluidPage(
       sidebarPanel(img(src="edgetree2.png",height="100%",width="100%")),
       titlePanel("Find out how rare and unique are the birds on your checklist with EDGE score!"),
       mainPanel(
-        h4("How is EDGE score calculated?"),
-        p("EDGE scores have two components:"), 
-        p("1. Evolutionarly Distinctivness (ED Score) is how unique a species is based on the number and distance of living relatives. A recently diverged species that has many close relatives has low Evolutionary Distinctiveness, like gulls (blue branches in the diagram). Species that diverged early in their evoultion history and have few (or no) living relatives have a high ED score, like the Hoatzin (red branch)"),
-        p("2. How Globally Endangered a species is determined by population size and level of conservation threat (from the IUCN Red List). Abundant species with many close relatives have low EDGE scores, while critically endangered species that have few (or no) close relatives have the highest scores."), 
+        h4("ED and EDGE scores quantify uniqueness and rarity"),
+        p(""), 
+        p(strong("Evolutionarly Distinctivness (ED Score)"),"is a measure of how unique a species is based on the number and distance of living relatives. A recently diverged species that has many close relatives,such as most gulls (blue branches in the diagram), has low Evolutionary Distinctiveness. Species that diverged early in their evoultionary history and have few (or no) living relatives such as the Hoatzin (red branch), have a high ED score"),
+        p(strong("EDGE Score"),"combines the",strong("ED"),"score,with how",strong("G"),"lobally",strong("E"),"ndangered, a species is. The latter is determined by the IUCN Red List of threatened species."), 
+        p("Abundant species with many close relatives have", strong("lowest EDGE scores"),",while critically endangered species that have few (or no) close relatives have the",strong("highest EDGE scores.")), 
         p("Species with high EDGE scores are often hard to find, and extremely unusual in the way they look or behave, making some of the most memorable lifers a birder can observe!"),
-        p("This web app allows you to determine which species on your life list have the highest EDGE scores.  
-           You can find out in two different ways. 
-           If you have an eBird account, you can use the “Upload your eBird data” tab to obtain EDGE scores directly from your eBird checklist. 
-           If you don’t have an ebird checklist, go to the “Explore and select species tab”, where you can select species form a list to create your own EDGE checklist"),
-         p("You can also calculate the Phylogenetic Distance of your checklist (PD). PD is the sum of all the tree branches (in Million Years), in the tree created by your checklist. The red and blue branches in the diagram, if your checklist only has the Hoatzin and two gulls."))),  
+        p("This web app allows you to determine which species on your life list have the highest EDGE scores. You can do this by uploading your eBird checklist."),
+        p("You can use the Explore tab to explore the global list of 9,993 bird species."),  
+        p("If you don’t have an ebird checklist, you can still determine your highest EDGE sightings using the this tab")
+          )),    
         br(),br(),
     
     ### New tab
