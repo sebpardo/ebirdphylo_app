@@ -119,6 +119,6 @@ shinyUI(fluidPage(
                p("EDGE score is a tool to prioritize conservation effort directed towards the world’s most unique and rare birds. Your support of the London Zoological Society will help to fund",a(href="http://edgeofexistence.org/conservation/current_projects.php",strong("grassroots")),"new conservation projects directed towards the world’s most unique and most threatened birds, so future generations get a chance to add them to their list as well!"),
                p("Donate", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("here."))),
                img(src="GiantIbis.jpeg",height="100%",width="100%"),
-               p("The Giant Ibis (",em("Thamantibis gigantea"),"or", em("Pseudibis gigantea"),")depending on who you ask) is the bird species with the highest EDGE score. Illustration by Henrik Grönvold - 1911 / Public Domain")
+               p("The Giant Ibis,", em("Thamantibis gigantea"), "or", em("Pseudibis gigantea")," depending on who you ask, is the bird species with the highest EDGE score. Illustration by Henrik Grönvold - 1911 / Public Domain")
 )))
     )))
