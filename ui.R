@@ -106,10 +106,9 @@ shinyUI(fluidPage(
              sidebarLayout(
                sidebarPanel(width=4,
                  titlePanel("Join the EDGE challenge", windowTitle = ""),
-                 p("You can help the birds by donating the sum of the EDGE score of your", strong("top 5 EDGE species")),
-                 ("Click one of the buttons below to find out the sum of your top 5 "),           
-                 actionButton("action3", "eBird checklists"),
-                 actionButton("action2", "Manually entered checklists"),
+                  p("You can help the bird by donating the sum of the top 5 EDGE scores on your checklist. Click one of the buttons below to find out your score"),
+                   actionButton("action3", "eBird checklists",style="width:235px"),
+                   actionButton("action2", "Manually entered checklists",style="width:235px"),
                  verbatimTextOutput("EDSCORE1", placeholder = FALSE),
                  verbatimTextOutput("EDSCORE2", placeholder = FALSE),
                  br(),br(),
@@ -120,6 +119,6 @@ shinyUI(fluidPage(
                p("EDGE score is a tool to prioritize conservation effort directed towards the world’s most unique and rare birds. Your support of the London Zoological Society will help to fund",a(href="http://edgeofexistence.org/conservation/current_projects.php",strong("grassroots")),"new conservation projects directed towards the world’s most unique and most threatened birds, so future generations get a chance to add them to their list as well!"),
                p("Donate", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("here."))),
                img(src="GiantIbis.jpeg",height="100%",width="100%"),
-               p("The Giant Ibis (Thamantibis gigantea or Pseudibis gigantea, depending on who you ask) is the bird species with the highest EDGE score. Illustration by Henrik Grönvold - 1911 / Public Domain")
+               p("The Giant Ibis (",em("Thamantibis gigantea"),"or", em("Pseudibis gigantea"),")depending on who you ask) is the bird species with the highest EDGE score. Illustration by Henrik Grönvold - 1911 / Public Domain")
 )))
     )))
