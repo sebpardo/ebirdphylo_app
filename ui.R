@@ -35,7 +35,7 @@ shinyUI(fluidPage(
     ### New tab
     
     tabPanel(
-      "Upload your eBird data",
+      "Upload your eBird checklist",
       sidebarLayout(
         sidebarPanel(
           titlePanel("Upload file", windowTitle = "ED and EDGE scores"),
@@ -73,14 +73,16 @@ shinyUI(fluidPage(
     ### New tab
     
     tabPanel(
-      "Explore and select species",
+      "Explore",
       sidebarLayout(
         sidebarPanel(
-          titlePanel("", windowTitle = ""),
-          p("Use the little triangles on top of each column to sort by name, rank, ED score etc."), 
-          p("Search and filter species usinng the boxes on top of each column"),
-          p("Create your EDGE checklist by clicking on species"),
-          p("You can dowload your EDGE cheklist with the button below"),
+          titlePanel("In this Tab you can:", windowTitle = ""),
+          p(strong("Search"), "for individual species using the search box"),
+          p(strong("Sort"), "species by their scores, rank or names using the small arrows on top of each column"), 
+          p(strong("Filter"), "species species using the boxes on top of each column"),
+          p(strong("Create"), "your own EDGE checklist by clicking on species"),
+          p(strong("Dowload"), "your own EDGE cheklist"),
+          p("Get",strong("PD"),"score of your checklist"),
           p(" "),
           downloadButton("downloadData", "Download my checklist"),
           p(" "),
@@ -90,10 +92,10 @@ shinyUI(fluidPage(
           p(verbatimTextOutput("pd2", placeholder = FALSE),"Million years of evolution!")),
         mainPanel(
           titlePanel(
-            "Explore the bottom table and click on species to create your EDGE checklist"
+            "Explore the complete EDGE bird list"
           ),
-          DT::dataTableOutput("origTableSelected"),
-          DT::dataTableOutput("origTable")
+          DT::dataTableOutput("origTable"),
+          DT::dataTableOutput("origTableSelected")
         )
       )
     ),
@@ -104,7 +106,7 @@ shinyUI(fluidPage(
              sidebarLayout(
                sidebarPanel(width=4,
                  titlePanel("Join the EDGE challenge", windowTitle = ""),
-                 p("You can help the bird by donating the sum of the top 5 EDGE scores on your checklist. Click one of the buttons below to find out your score"),
+                  p("You can help the bird by donating the sum of the top 5 EDGE scores on your checklist. Click one of the buttons below to find out your score"),
                    actionButton("action3", "eBird checklists",style="width:235px"),
                    actionButton("action2", "Manually entered checklists",style="width:235px"),
                  verbatimTextOutput("EDSCORE1", placeholder = FALSE),
@@ -114,7 +116,7 @@ shinyUI(fluidPage(
                br(),
                p("More about this app and ED scores:",a(href="http://sebpardo.github.io/ebirdtrees/",strong("here.")))),
              mainPanel(
-               p("EDGE score is a tool to prioritize conservation effort directed towards the world’s most unique and rare birds. Your support of the London Zoological Society will help to fund grassroots conservation efforts directed towards the world’s most unique and most threatened birds, so future generations get a chance to add them to their list as well!"),
+               p("EDGE score is a tool to prioritize conservation effort directed towards the world’s most unique and rare birds. Your support of the London Zoological Society will help to fund",a(href="http://edgeofexistence.org/conservation/current_projects.php",strong("grassroots")),"new conservation projects directed towards the world’s most unique and most threatened birds, so future generations get a chance to add them to their list as well!"),
                p("Donate", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("here."))),
                img(src="GiantIbis.jpeg",height="100%",width="100%"),
                p("The Giant Ibis (",em("Thamantibis gigantea"),"or", em("Pseudibis gigantea"),")depending on who you ask) is the bird species with the highest EDGE score. Illustration by Henrik Grönvold - 1911 / Public Domain")
