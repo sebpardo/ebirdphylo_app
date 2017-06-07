@@ -22,13 +22,12 @@ shinyUI(fluidPage(
       mainPanel(
         h4("ED and EDGE scores quantify uniqueness and rarity"),
         p(""), 
-        p(strong("Evolutionarly Distinctivness (ED Score)"),"is a measure of how unique a species is based on the number and distance of living relatives. A recently diverged species that has many close relatives,such as most gulls (blue branches in the diagram), has low Evolutionary Distinctiveness. Species that diverged early in their evoultionary history and have few (or no) living relatives such as the Hoatzin (red branch), have a high ED score"),
-        p(strong("EDGE Score"),"combines the",strong("ED"),"score,with how",strong("G"),"lobally",strong("E"),"ndangered, a species is. The latter is determined by the IUCN Red List of threatened species."), 
-        p("Abundant species with many close relatives have", strong("lowest EDGE scores"),",while critically endangered species that have few (or no) close relatives have the",strong("highest EDGE scores.")), 
-        p("Species with high EDGE scores are often hard to find, and extremely unusual in the way they look or behave, making some of the most memorable lifers a birder can observe!"),
-        p("This web app allows you to determine which species on your life list have the highest EDGE scores. You can do this by uploading your eBird checklist."),
-        p("You can use the Explore tab to explore the global list of 9,993 bird species."),  
-        p("If you don’t have an ebird checklist, you can still determine your highest EDGE sightings using the this tab")
+        p(strong("Evolutionarly Distinctivness (ED Score)"),"is a measure of how unique a species is based on the number and distance of living relatives. A recently diverged species that has many close relatives, such as most gulls (blue branches in the diagram), has low Evolutionary Distinctiveness. Species that diverged early in their evoultionary history and have few (or no) living relatives such as the Hoatzin (red branch), have a high ED score."),
+        p(strong("EDGE Score"),"combines the",strong("ED"),"score, with how",strong("G"),"lobally",strong("E"),"ndangered, a species is. The latter is determined by the IUCN Red List of threatened species."), 
+        p("Abundant species with many close relatives have", strong("lowest EDGE scores"),", while critically endangered species that have few (or no) close relatives have the",strong("highest EDGE scores.")), 
+        p("Species with high EDGE scores are often hard to find, and can be extremely unusual in the way they look or behave, making some of the most memorable lifers a birder can observe!"),
+        p("This web app allows you to determine which species on your life list have the highest EDGE scores. If you keep track of your sightings using eBird, you can do this by simply uploading your eBird checklist."),
+        p("If you don’t use eBird to keep track of your sightings, you can still determine the EDGE scores of species you have sighted using the 'Explore' tab, where you can browse and select from a list of 9,993 bird species.")
           )),    
         br(),br(),
     
@@ -119,6 +118,6 @@ shinyUI(fluidPage(
                p("EDGE score is a tool to prioritize conservation effort directed towards the world’s most unique and rare birds. Your support of the London Zoological Society will help to fund",a(href="http://edgeofexistence.org/conservation/current_projects.php",strong("grassroots")),"new conservation projects directed towards the world’s most unique and most threatened birds, so future generations get a chance to add them to their list as well!"),
                p("Donate", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("here."))),
                img(src="GiantIbis.jpeg",height="100%",width="100%"),
-               p("The Giant Ibis (",em("Thamantibis gigantea"),"or", em("Pseudibis gigantea"),")depending on who you ask) is the bird species with the highest EDGE score. Illustration by Henrik Grönvold - 1911 / Public Domain")
+               p("The Giant Ibis,", em("Thamantibis gigantea"), "or", em("Pseudibis gigantea")," depending on who you ask, is the bird species with the highest EDGE score. Illustration by Henrik Grönvold - 1911 / Public Domain")
 )))
     )))
