@@ -83,7 +83,7 @@ shinyUI(fluidPage(
           p(strong("Dowload"), "your own EDGE cheklist"),
           p("Get",strong("PD"),"score of your checklist"),
           p(" "),
-          downloadButton("downloadData", "Download my checklist"),
+          downloadButton("downloadData", "Download my checklist",style="width:246px"),
           p(" "),
           actionButton("action", "Get PD score(slow, wait a minute...)"),
           p(""),
@@ -103,11 +103,19 @@ shinyUI(fluidPage(
     
     tabPanel("Help the birds!",
              sidebarLayout(
-               sidebarPanel(width=4,
+               sidebarPanel(
+                   tags$head(
+                   tags$style(type="text/css", "select { max-width: 280px; }"),
+                   tags$style(type="text/css", ".span4 { max-width: 280px; }"),
+                   tags$style(type="text/css", ".well { max-width: 280px; }"),
+                   tags$style(type="text/css", "select { min-width: 280px; }"),
+                   tags$style(type="text/css", ".span4 { min-width: 280px; }"),
+                   tags$style(type="text/css", ".well { min-width: 280px; }")
+                  ),
                  titlePanel("Join the EDGE challenge", windowTitle = ""),
                   p("You can help the bird by donating the sum of the top 5 EDGE scores on your checklist. Click one of the buttons below to find out your score"),
-                   actionButton("action3", "eBird checklists",style="width:235px"),
-                   actionButton("action2", "Manually entered checklists",style="width:235px"),
+                   actionButton("action3", "eBird checklists",style="width:239px"),
+                   actionButton("action2", "Manually entered checklists",style="width:239px"),
                  verbatimTextOutput("EDSCORE1", placeholder = FALSE),
                  verbatimTextOutput("EDSCORE2", placeholder = FALSE),
                  br(),br(),
