@@ -40,8 +40,8 @@ shinyUI(fluidPage(tags$style(type="text/css",
     tabPanel(
       strong("Upload your eBird checklist"),
       sidebarLayout(
-        sidebarPanel(
-          titlePanel("Upload file", windowTitle = "ED and EDGE scores"),
+       absolutePanel(
+          h3("Upload file"),
           fileInput(
             'mydata',
             'Specify location of your eBird data file ("MyEBirdData.csv")',
@@ -59,20 +59,21 @@ shinyUI(fluidPage(tags$style(type="text/css",
           ),
           #hr(),
           checkboxInput('grouping', 'Group by country?', value = FALSE),
-          checkboxInput('pd', 'Calculate PD? (slow, wait a minute or so)', value = FALSE)
+          checkboxInput('pd', 'Calculate the total million years of evolution contained in your checklist? (slow, wait a minute or so)', value = FALSE)
           # checkboxInput('allbirds', 'Browse all bird species? (slow, only works if .csv file hasn\'t been loaded)', value = FALSE),
           # hr(),
         ),
-        mainPanel(
-          titlePanel("ED and EDGE scores"),
-          h3("Summary stats"),
+        absolutePanel(
+          h2(em("Your EDGE species checklist:"),align="center"),
           tableOutput('summary.tab'),
-          h3("Details by species"),
-          DT::dataTableOutput('phylo.results')
+          DT::dataTableOutput('phylo.results'),
+          top=180,left=300,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
         )
-      )
+      ),
+      absolutePanel(img(src="banner3.jpg",height="100%",width="100%"),top=51,left=15,right=15),
+      absolutePanel(strong("#408"),"Whooping Crane",align="right",style="color: #FDFEFE;",top=48,right=25),
+      absolutePanel("Creative Commons",align="right",style="color: #FDFEFE;font-weight: 100",top=68,right=25)
     ),
-    
     ### New tab
     
     tabPanel(
