@@ -79,31 +79,36 @@ shinyUI(fluidPage(tags$style(type="text/css",
     tabPanel(
       strong("Explore"),
       sidebarLayout(
-        sidebarPanel(
-          titlePanel("In this Tab you can:", windowTitle = ""),
-          p(strong("Search"), "for individual species using the search box"),
-          p(strong("Sort"), "species by their scores, rank or names using the small arrows on top of each column"), 
-          p(strong("Filter"), "species species using the boxes on top of each column"),
+        absolutePanel(
+          h3("In this tab you can also:"),
+          p(strong("Search"), "for individual species using the search box."),
+          p(strong("Sort"), "species by their scores, rank, or names using the small arrows on top of each column."), 
+          p(strong("Filter"), "species species using the boxes at the top of each column"),
           p(strong("Create"), "your own EDGE checklist by clicking on species"),
           p(strong("Dowload"), "your own EDGE cheklist"),
           p("Get",strong("PD"),"score of your checklist"),
-          p(" "),
+          br(),
           downloadButton("downloadData", "Download my checklist",style="width:246px"),
-          p(" "),
-          actionButton("action", "Get PD score(slow, wait a minute...)"),
-          p(""),
-          p("This means that the combined phylogenetic distance of all the species in your checklist encompasses"),
-          p(verbatimTextOutput("pd2", placeholder = FALSE),"Million years of evolution!")),
-        mainPanel(
-          titlePanel(
-            "Explore the complete EDGE bird list"
+          br(),
+          br(),
+          p(strong("Calculate"),"how many million years of evolution are contained in your checklist, using the button below."),
+          p(verbatimTextOutput("pd2", placeholder = FALSE),""),
+                    actionButton("action", "(slow, wait a minute or so..)"),
+          br(),
+          top=180,left=15,width=285,height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),
+        absolutePanel(
+          h2(em(
+            "Explore the complete EDGE bird list"),align="center"
           ),
           DT::dataTableOutput("origTable"),
-          DT::dataTableOutput("origTableSelected")
-        )
+          DT::dataTableOutput("origTableSelected"),
+          top=180,left=300,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
       )
     ),
-    
+          absolutePanel(img(src="banner2b.png",height="100%",width="100%"),top=51,left=15,right=15),
+      absolutePanel(strong("#4"),"Kakapo",align="right",style="color: #FDFEFE;",top=48,right=25),
+      absolutePanel("ⒸShane McInnes",align="right",style="color: #FDFEFE;font-weight: 100",top=68,right=25)
+    ),
     ### New tab
     
     tabPanel(
