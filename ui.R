@@ -17,9 +17,9 @@ shinyUI(fluidPage(tags$style(type="text/css",
   ),
   theme = shinytheme("cerulean"),
   navbarPage(
-    "EDGE APP",
+    "",
     tabPanel(
-      "About EDGE Scores",
+      strong("About EDGE Scores"),
       sidebarPanel(img(src="edgetree2.png",height="100%",width="100%")),
       titlePanel("How unique and rare are the birds on your checklist?"),
       mainPanel(
@@ -37,7 +37,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
     ### New tab
     
     tabPanel(
-      "Upload your eBird checklist",
+      strong("Upload your eBird checklist"),
       sidebarLayout(
         sidebarPanel(
           titlePanel("Upload file", windowTitle = "ED and EDGE scores"),
@@ -75,7 +75,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
     ### New tab
     
     tabPanel(
-      "Explore",
+      strong("Explore"),
       sidebarLayout(
         sidebarPanel(
           titlePanel("In this Tab you can:", windowTitle = ""),
@@ -104,7 +104,8 @@ shinyUI(fluidPage(tags$style(type="text/css",
     
     ### New tab
     
-    tabPanel("Help the birds!",
+    tabPanel(
+      strong("Help the birds!"),
              sidebarLayout(
                sidebarPanel(
                    tags$head(
