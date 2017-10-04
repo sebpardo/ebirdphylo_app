@@ -20,19 +20,20 @@ shinyUI(fluidPage(tags$style(type="text/css",
     "",
     tabPanel(
       strong("About EDGE Scores"),
-      sidebarPanel(img(src="edgetree2.png",height="100%",width="100%")),
-      titlePanel("How unique and rare are the birds on your checklist?"),
-      mainPanel(
-        h4("ED and EDGE scores quantify uniqueness and rarity"),
-        p(""), 
-        p(strong("Evolutionarly Distinctivness (ED Score)"),"is a measure of how unique a species is based on the number and distance of living relatives. A recently diverged species that has many close relatives, such as most gulls (blue branches in the diagram), has low Evolutionary Distinctiveness. Species that diverged early in their evoultionary history and have few (or no) living relatives such as the Hoatzin (red branch), have a high ED score."),
-        p(strong("EDGE Score"),"combines the",strong("ED"),"score, with how",strong("G"),"lobally",strong("E"),"ndangered, a species is. The latter is determined by the IUCN Red List of threatened species."), 
-        p("Abundant species with many close relatives have", strong("lowest EDGE scores"),", while critically endangered species that have few (or no) close relatives have the",strong("highest EDGE scores.")), 
-        p("Species with high EDGE scores are often hard to find, and can be extremely unusual in the way they look or behave, making some of the most memorable lifers a birder can observe!"),
-        p("This web app allows you to determine which species on your life list have the highest EDGE scores. If you keep track of your sightings using eBird, you can do this by simply uploading your eBird checklist."),
-        p("If you don’t use eBird to keep track of your sightings, you can still determine the EDGE scores of species you have sighted using the 'Explore' tab, where you can browse and select from a list of 9,993 bird species.")
-          )),    
-        br(),br(),
+      absolutePanel(img(src="edgetree3.png",height="28%",width="28%"),top=240,left=20),
+      absolutePanel(
+        h2(em("Finding the world's most extraordinary species"),align="center"),
+        br(),
+        br(),
+        p("Bird EDGE scores help to prioritize conservation effort towards the world’s most unique and endangered birds.",strong ("Evolutionarly Distinctivness (ED Score)"),"is a measure of how unique a species is based on the number and evolutionary distance of living relatives. A recently diverged species that has many close relatives, such as most gulls (blue branches in the diagram), has low Evolutionary Distinctiveness. Species that diverged early in their evoultionary history and have few (or no) living relatives, such as the Hoatzin (red branch), have a high Evolutionary Disctinctivness."),
+        p(strong("EDGE Score"),"combines",strong("Evolutionary Disctinctivness (ED)"),"score, with how",strong("Globally Endangered (GE)"),"a species is. The latter is determined by the IUCN Red List of threatened species."), 
+        p("Abundant species with many close relatives have the", strong("lowest EDGE scores"),", while critically endangered species that have few (or no) close relatives have the",strong("highest EDGE scores."),"Species with high EDGE scores are likely be some of the most memorable lifers for any birder, as they often hard to find and extraordinary in the way they look or behave."),
+        p("You can find out which species in your life list have the highest EDGE scores using this web app. To do this, you can simply upload your eBird checklist. If you don’t use eBird to keep track of your sightings, you can use the 'Explore' tab, to browse and select from the complete list of 9,993 bird species.")
+        ,top=180,left=300,right=15,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),    
+        absolutePanel(img(src="banner1.png",height="100%",width="100%"),top=51,left=15,right=15),
+        absolutePanel(strong("#8"),"Philippine Eagle",align="right",style="color: #FDFEFE;",top=48,right=25),
+      absolutePanel("ⒸAlain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=68,right=25)
+       ),
     
     ### New tab
     
