@@ -11,7 +11,10 @@ library(shinythemes)
 options(shiny.maxRequestSize=30*1024^2) 
 
 
-shinyUI(fluidPage(
+shinyUI(fluidPage(tags$style(type="text/css",
+                       ".shiny-output-error { visibility: hidden; }",
+                       ".shiny-output-error:before { visibility: hidden; }"
+  ),
   theme = shinytheme("cerulean"),
   navbarPage(
     "EDGE APP",
