@@ -114,29 +114,30 @@ shinyUI(fluidPage(tags$style(type="text/css",
     tabPanel(
       strong("Help the birds!"),
              sidebarLayout(
-               sidebarPanel(
-                   tags$head(
-                   tags$style(type="text/css", "select { max-width: 280px; }"),
-                   tags$style(type="text/css", ".span4 { max-width: 280px; }"),
-                   tags$style(type="text/css", ".well { max-width: 280px; }"),
-                   tags$style(type="text/css", "select { min-width: 280px; }"),
-                   tags$style(type="text/css", ".span4 { min-width: 280px; }"),
-                   tags$style(type="text/css", ".well { min-width: 280px; }")
-                  ),
-                 titlePanel("Join the EDGE challenge", windowTitle = ""),
-                  p("You can help the bird by donating the sum of the top 5 EDGE scores on your checklist. Click one of the buttons below to find out your score"),
+               absolutePanel(
+                 h3("Join the EDGE challenge"),
+                 br(),
+                   p("Click one of the buttons below to find out the sum of your top 5 EDGE species score's." ),
                    actionButton("action3", "eBird checklists",style="width:239px"),
                    actionButton("action2", "Manually entered checklists",style="width:239px"),
                  verbatimTextOutput("EDSCORE1", placeholder = FALSE),
                  verbatimTextOutput("EDSCORE2", placeholder = FALSE),
-                 br(),br(),
-               p("More about EDGE scores:", a(href="http://edgeofexistence.org/birds/default.php",strong("here."))),
-               br(),
-               p("More about this app and ED scores:",a(href="http://sebpardo.github.io/ebirdtrees/",strong("here.")))),
-             mainPanel(
-               p("EDGE score is a tool to prioritize conservation effort directed towards the world’s most unique and rare birds. Your support of the London Zoological Society will help to fund",a(href="http://edgeofexistence.org/conservation/current_projects.php",strong("grassroots")),"new conservation projects directed towards the world’s most unique and most threatened birds, so future generations get a chance to add them to their list as well!"),
-               p("Donate", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("here."))),
+                 br(),
+                  p("You can", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("DONATE")),"that amount to help our conservaiton efforts, so future generations also get a chance enjoy the world's most extraordinary birds!,then challenge fellow birders to find out who has the highest EDGE score"),
+                 br(),
+                 p("Find out", a(href="http://edgeofexistence.org/birds/default.php",strong("more about EDGE scores")), "for birds."),
+                 br(),
+                 p("This App was developed by",a(href="https://www.sfu.ca/biology/people/profiles/svaldez.html",strong("Simón Valdez-Juarez")),"and",a(href="http://sebpardo.github.io/ebirdtrees/",strong("Sebastián Pardo"))),top=180,left=15,width=285,height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),
+             absolutePanel(
+               p("The London Zoological Society helps to fund",a(href="http://edgeofexistence.org/conservation/current_projects.php",strong("grassroots")),"conservation projects directed towards the world’s most unique and most threatened birds."),
                img(src="GiantIbis.jpeg",height="100%",width="100%"),
-               p("The Giant Ibis,", em("Thamantibis gigantea"), "or", em("Pseudibis gigantea")," depending on who you ask, is the bird species with the highest EDGE score. Illustration by Henrik Grönvold - 1911 / Public Domain")
-)))
-    )))
+               p("The Giant Ibis,", em("Thamantibis gigantea"), "or", em("Pseudibis gigantea")," depending on who you ask, is the bird species with the highest EDGE score. Illustration by Henrik Grönvold - 1911 / Public Domain"),
+                                top=180,left=300,width="auto",height="auto",style="padding: 15px; border-bottom: 2px solid #;"
+               )),
+             absolutePanel(img(src="banner6c.png",height="100%",width="100%"),top=51,left=15,right=15),
+             absolutePanel(h2(em("Saving the world's most extraordinary birds"),align="center",style="color: #FDFEFE;"),top=58,left=200,right=15),
+             absolutePanel(strong("#66"),"Negros Bleeding-heart",align="right",style="color: #FDFEFE;",top=48,right=25),
+             absolutePanel("ⒸAlain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=68,right=25)
+             )
+             )
+  ))
