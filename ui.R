@@ -31,8 +31,8 @@ shinyUI(fluidPage(tags$style(type="text/css",
         p("You can find out which species in your life list have the highest EDGE scores using this web app. To do this, you can simply upload your eBird checklist. If you don’t use eBird to keep track of your sightings, you can use the 'Explore' tab, to browse and select from the complete list of 9,993 bird species.")
         ,top=180,left=320,right=15,width="auto",height="auto",style="min-width:500px;max-width:1000px; padding:24px; border-bottom: 2px solid #; background: #EAECEE;"),    
         absolutePanel(img(src="banner1.png",height="100%",width="100%"),top=51,left=15,right=15),
-        absolutePanel(strong("#8"),"Philippine Eagle",align="right",style="color: #FDFEFE;",top=48,right=25),
-      absolutePanel("ⒸAlain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=68,right=25)
+        absolutePanel(strong("#8"),"Philippine Eagle",align="right",style="color: #FDFEFE;",top=52,right=22),
+      absolutePanel("Ⓒ Alain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=70,right=22)
        ),
     
     ### New tab
@@ -71,8 +71,8 @@ shinyUI(fluidPage(tags$style(type="text/css",
         )
       ),
       absolutePanel(img(src="banner3.jpg",height="100%",width="100%"),top=51,left=15,right=15),
-      absolutePanel(strong("#408"),"Whooping Crane",align="right",style="color: #FDFEFE;",top=48,right=25),
-      absolutePanel("Creative Commons",align="right",style="color: #FDFEFE;font-weight: 100",top=68,right=25)
+      absolutePanel(strong("#408"),"Whooping Crane",align="right",style="color: #FDFEFE;",top=52,right=22),
+      absolutePanel("Creative Commons",align="right",style="color: #FDFEFE;font-weight: 100",top=70,right=22)
     ),
     ### New tab
     
@@ -106,8 +106,8 @@ shinyUI(fluidPage(tags$style(type="text/css",
       )
     ),
           absolutePanel(img(src="banner2b.png",height="100%",width="100%"),top=51,left=15,right=15),
-      absolutePanel(strong("#4"),"Kakapo",align="right",style="color: #FDFEFE;",top=48,right=25),
-      absolutePanel("ⒸShane McInnes",align="right",style="color: #FDFEFE;font-weight: 100",top=68,right=25)
+      absolutePanel(strong("#4"),"Kakapo",align="right",style="color: #FDFEFE;", top=52, right=22),
+      absolutePanel("Ⓒ Shane McInnes",align="right",style="color: #FDFEFE;font-weight: 100", top=70, right=22)
     ),
     ### New tab
     
@@ -137,8 +137,8 @@ shinyUI(fluidPage(tags$style(type="text/css",
                )),
              absolutePanel(img(src="banner6c.png",height="100%",width="100%"),top=51,left=15,right=15),
              absolutePanel(h2(em("Saving the world's most extraordinary birds"),align="center",style="color: #FDFEFE;"),top=58,left=200,right=15),
-             absolutePanel(strong("#66"),"Negros Bleeding-heart",align="right",style="color: #FDFEFE;",top=48,right=25),
-             absolutePanel("ⒸAlain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=68,right=25)
+             absolutePanel(strong("#66"),"Negros Bleeding-heart",align="right",style="color: #FDFEFE;",top=52,right=22),
+             absolutePanel("Ⓒ Alain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=70,right=22)
              )
              )
   ))
