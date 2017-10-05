@@ -16,11 +16,11 @@ shinyUI(fluidPage(tags$style(type="text/css",
                        ".shiny-output-error:before { visibility: hidden; }"
   ),
   theme = shinytheme("cerulean"),
-  navbarPage(
-    "",
+  navbarPage(collapsible=TRUE,
+    "EDGE APP",
     tabPanel(
       strong("About EDGE Scores"),
-      absolutePanel(img(src="edgetree3.png",height="28%",width="28%"),top=240,left=20),
+      absolutePanel(img(src="edgetree3.png",height=420,width="auto"),top=240,left=15,bottom=40,right=500),
       absolutePanel(
         h2(em("Finding the world's most extraordinary species"),align="center"),
         br(),
@@ -29,7 +29,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
         p(strong("EDGE Score"),"combines",strong("Evolutionary Disctinctivness (ED)"),"score, with how",strong("Globally Endangered (GE)"),"a species is. The latter is determined by the IUCN Red List of threatened species."), 
         p("Abundant species with many close relatives have the", strong("lowest EDGE scores"),", while critically endangered species that have few (or no) close relatives have the",strong("highest EDGE scores."),"Species with high EDGE scores are likely be some of the most memorable lifers for any birder, as they often hard to find and extraordinary in the way they look or behave."),
         p("You can find out which species in your life list have the highest EDGE scores using this web app. To do this, you can simply upload your eBird checklist. If you don’t use eBird to keep track of your sightings, you can use the 'Explore' tab, to browse and select from the complete list of 9,993 bird species.")
-        ,top=180,left=300,right=15,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),    
+        ,top=180,left=320,right=15,width="auto",height="auto",style="min-width:500px;max-width:1000px; padding:24px; border-bottom: 2px solid #; background: #EAECEE;"),    
         absolutePanel(img(src="banner1.png",height="100%",width="100%"),top=51,left=15,right=15),
         absolutePanel(strong("#8"),"Philippine Eagle",align="right",style="color: #FDFEFE;",top=48,right=25),
       absolutePanel("ⒸAlain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=68,right=25)
@@ -62,7 +62,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
           checkboxInput('pd', 'Calculate the total million years of evolution contained in your checklist? (slow, wait a minute or so)', value = FALSE)
           # checkboxInput('allbirds', 'Browse all bird species? (slow, only works if .csv file hasn\'t been loaded)', value = FALSE),
           # hr(),
-        ),
+          ,top=180,left=15,width=300,height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),
         absolutePanel(
           h2(em("Your EDGE species checklist:"),align="center"),
           tableOutput('summary.tab'),
@@ -95,7 +95,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
           p(verbatimTextOutput("pd2", placeholder = FALSE),""),
                     actionButton("action", "(slow, wait a minute or so..)"),
           br(),
-          top=180,left=15,width=285,height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),
+          top=180,left=15,width=300,height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),
         absolutePanel(
           h2(em(
             "Explore the complete EDGE bird list"),align="center"
@@ -127,12 +127,13 @@ shinyUI(fluidPage(tags$style(type="text/css",
                  br(),
                  p("Find out", a(href="http://edgeofexistence.org/birds/default.php",strong("more about EDGE scores")), "for birds."),
                  br(),
-                 p("This App was developed by",a(href="https://www.sfu.ca/biology/people/profiles/svaldez.html",strong("Simón Valdez-Juarez")),"and",a(href="http://sebpardo.github.io/ebirdtrees/",strong("Sebastián Pardo"))),top=180,left=15,width=285,height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),
+                 p("This App was developed by",a(href="https://www.sfu.ca/biology/people/profiles/svaldez.html",strong("Simón Valdez-Juarez")),"and",a(href="http://sebpardo.github.io/ebirdtrees/",strong("Sebastián Pardo"))),
+                 top=200,left=15,width=300,height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),
              absolutePanel(
                p("The London Zoological Society helps to fund",a(href="http://edgeofexistence.org/conservation/current_projects.php",strong("grassroots")),"conservation projects directed towards the world’s most unique and most threatened birds."),
                img(src="GiantIbis.jpeg",height="100%",width="100%"),
                p("The Giant Ibis,", em("Thamantibis gigantea"), "or", em("Pseudibis gigantea")," depending on who you ask, is the bird species with the highest EDGE score. Illustration by Henrik Grönvold - 1911 / Public Domain"),
-                                top=180,left=300,width="auto",height="auto",style="padding: 15px; border-bottom: 2px solid #;"
+                                top=200,left=300,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
                )),
              absolutePanel(img(src="banner6c.png",height="100%",width="100%"),top=51,left=15,right=15),
              absolutePanel(h2(em("Saving the world's most extraordinary birds"),align="center",style="color: #FDFEFE;"),top=58,left=200,right=15),
