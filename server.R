@@ -59,7 +59,7 @@ function(input, output) {
                              order = list(list(4, "desc")), 
                              columnDefs = list(list(visible = FALSE, targets = c(0)))),
               filter = list(position="top", clear=FALSE, plain=TRUE)
-    ))
+    )%>% formatRound(c("ED Score","EDGE Score"),digits=3))
   
   
   # Calculates sum of Top 5 EDGE species from eBird data
@@ -95,11 +95,11 @@ function(input, output) {
             group_by(Country) %>%
             do(mypd(., ntrees = 5)) %>%
             select(Country, median_pd) %>%
-            rename(`Median PD` = median_pd)
+            rename(`Total million years of evolution` = median_pd)
         } else {
           pddata <- mypd(mydata(), ntrees = 5) %>%
             select(median_pd) %>%
-            rename(`Median PD` = median_pd)
+            rename(`Million Years` = median_pd)
         }
       }
       if (input$grouping) {
