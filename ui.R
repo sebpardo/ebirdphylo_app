@@ -114,27 +114,30 @@ shinyUI(fluidPage(tags$style(type="text/css",
     
     tabPanel(
       strong("Help the birds!"),
-             sidebarLayout(
+                         verticalLayout(
                absolutePanel(
-                 h3("Join the EDGE challenge"),
+                 h2(em("Meet Kahil Panopio"),align="center"),
+                 img(src="Kahlil-Eagles.jpg",height="100%",width="100%"),
                  br(),
-                   p("Click one of the buttons below to find out the sum of your top 5 EDGE species score's." ),
-                   actionButton("action3", "eBird checklists",style="width:239px"),
-                   actionButton("action2", "Manually entered checklists",style="width:239px"),
+                 br(),
+                 p("The", a(href="http://edgeofexistence.org/birds/species_info.php?id=1948", target="_blank", strong("Philippine Eagle")),"was never common within its small range confined to just four islands of the Philippines. Habitat destruction and hunting further reduced the range and numbers of this criticaly endangered species."), 
+                 p("This majestic bird was considered extirpated from most of its former range in Luzon, where there had been no sighings since 1978. Fortunately extensive surveys in 2014 found a small population in Mt. Mingan."), 
+                 p("EDGE fellow Kahlil Panopio and Haribon, a local NGO, identified critical habitat and gathered the support of the local communities and goverments to protect it. Thanks to their efforts, 3 years later 8,227 hectares of critical habitat will soon be declared a protected area."), 
+                 p("The London Zoological Society helps to fund this and similar ",a(href="http://edgeofexistence.org/conservation/fellows_list.php", target="_blank", strong("grassroots")), "conservation projects directed towards the world’s most unique and most threatened species."),
+                 h3("Join the EDGE challenge",align="center"),
+                 br(),
+                 p("You can", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("DONATE")),"that amount to help our conservaiton efforts, so future generations also get a chance enjoy the world's most extraordinary birds!,then challenge fellow birders to find out who has the highest EDGE score"),
+                 p("Click one of the buttons below to find out the sum of your top 5 EDGE species score's." ),
+                 actionButton("action3", "eBird checklists",style="width:239px"),
+                 actionButton("action2", "Manually entered checklists",style="width:239px"),
                  verbatimTextOutput("EDSCORE1", placeholder = FALSE),
                  verbatimTextOutput("EDSCORE2", placeholder = FALSE),
                  br(),
-                  p("You can", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("DONATE")),"that amount to help our conservaiton efforts, so future generations also get a chance enjoy the world's most extraordinary birds!,then challenge fellow birders to find out who has the highest EDGE score"),
                  br(),
                  p("Find out", a(href="http://edgeofexistence.org/birds/default.php", target="_blank", strong("more about EDGE scores")), "for birds."),
                  br(),
                  p("This App was developed by",a(href="https://www.sfu.ca/biology/people/profiles/svaldez.html", target="_blank", strong("Simón Valdez-Juarez")),"and",a(href="http://sebpardo.github.io/", target="_blank", strong("Sebastián Pardo"))),
-                 top=200,left=15,width=300,height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),
-             absolutePanel(
-               p("The London Zoological Society helps to fund",a(href="http://edgeofexistence.org/conservation/current_projects.php", target="_blank", strong("grassroots")), "conservation projects directed towards the world’s most unique and most threatened birds."),
-               img(src="GiantIbis.jpeg",height="100%",width="100%"),
-               p("The Giant Ibis,", em("Thamantibis gigantea"), "or", em("Pseudibis gigantea")," depending on who you ask, is the bird species with the highest EDGE score. Illustration by Henrik Grönvold - 1911 / Public Domain"),
-                                top=200,left=300,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
+                  top=100,left=15,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"
                )),
              absolutePanel(img(src="banner6c.png",height="100%",width="100%"),top=51,left=15,right=15),
              absolutePanel(h2(em("Saving the world's most extraordinary birds"),align="center",style="color: #FDFEFE;"),top=58,left=200,right=15),
