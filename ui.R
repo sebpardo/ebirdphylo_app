@@ -106,7 +106,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
           top=180,left=300,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
       )
     ),
-          absolutePanel(img(src="banner7.png",height="100%",width="100%"),top=51,left=15,right=15),
+          absolutePanel(img(src="banner7.jpg",height="100%",width="100%"),top=51,left=15,right=15),
       absolutePanel(strong("#12"),"Northern Bald Ibis",align="right",style="color: #FDFEFE;", top=52, right=30),
       absolutePanel("Ⓒ Rafa Benjumea - Ecotono Birding",align="right",style="color: #FDFEFE;font-weight: 100", top=70, right=30)
     ),
