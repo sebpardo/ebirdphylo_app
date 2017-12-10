@@ -29,7 +29,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
         p(strong("EDGE Score"),"combines the",strong("Evolutionary Disctinctivness (ED)"),"score with how",strong("Globally Endangered (GE)"),"a species is. The latter is determined by the", 
           a(href="http://www.iucnredlist.org/", target="_blank",strong("IUCN Red List of Threatened Species."))),
           p("Abundant species with many close relatives have the", strong("lowest EDGE scores"),"while critically endangered species that have few (or no) close relatives have the",strong("highest EDGE scores."),"Species with high EDGE scores are likely some of the most memorable lifers for any birder, as they often hard to find and extraordinary in the way they look or behave."),
-        p("You can find out which species in your life list have the highest EDGE scores using this web app. To do this, you can upload your eBird checklist. If you don not use eBird to keep track of your sightings, you can use the 'Explore' tab, to browse and select from the complete list of 9,993 bird species.")
+        p("You can find out which species in your life list have the highest EDGE scores using this web app. To do this, you can upload your eBird checklist. If you do not use eBird to keep track of your sightings, you can use the 'Explore' tab to browse and select from the complete list of 9,993 bird species.")
         ,top=180,left=320,right=15,width="auto",height="auto",style="min-width:500px;max-width:1000px; padding:24px; border-bottom: 2px solid #; background: #EAECEE;"),    
         absolutePanel(img(src="banner1.png",height="100%",width="100%"),top=51,left=15,right=15),
         absolutePanel(strong("#8"),"Philippine Eagle",align="right",style="color: #FDFEFE;",top=52,right=22),
@@ -82,8 +82,8 @@ shinyUI(fluidPage(tags$style(type="text/css",
       sidebarLayout(
         absolutePanel(
           h3("In this tab you can also:"),
-          p(strong("Search"), "for individual species using the search box."),
-          p(strong("Sort"), "species by their scores, rank, or names using the small arrows on top of each column."), 
+          p(strong("Search"), "for individual species using the search box"),
+          p(strong("Sort"), "species by their scores, rank, or names using the small arrows on top of each column"), 
           p(strong("Filter"), "species using the boxes at the top of each column"),
           p(strong("Create"), "your own EDGE checklist by clicking on species"),
           p(strong("Download"), "your own EDGE checklist"),
