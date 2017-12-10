@@ -73,7 +73,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
       ),
       absolutePanel(img(src="banner8.jpg",height="100%",width="100%"),top=51,left=15,right=15),
       absolutePanel(strong("#894"),"Red-tailed Tropicbird",align="right",style="color: #FDFEFE;",top=52,right=22),
-      absolutePanel("Ⓒ Simon Valdez-Juarez"",align="right",style="color: #FDFEFE;font-weight: 100",top=70,right=22)
+      absolutePanel("Ⓒ Simon Valdez-Juarez",align="right",style="color: #FDFEFE;font-weight: 100",top=70,right=22)
     ),
     ### New tab
     
@@ -108,7 +108,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
     ),
           absolutePanel(img(src="banner7.png",height="100%",width="100%"),top=51,left=15,right=15),
       absolutePanel(strong("#12"),"Northern Bald Ibis",align="right",style="color: #FDFEFE;", top=52, right=30),
-      absolutePanel("Ⓒ Rafa Benjumea - Ecotono Birding"",align="right",style="color: #FDFEFE;font-weight: 100", top=70, right=30)
+      absolutePanel("Ⓒ Rafa Benjumea - Ecotono Birding",align="right",style="color: #FDFEFE;font-weight: 100", top=70, right=30)
     ),
     ### New tab
     
