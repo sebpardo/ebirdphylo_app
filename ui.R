@@ -81,8 +81,8 @@ shinyUI(fluidPage(tags$style(type="text/css",
       sidebarLayout(
         absolutePanel(
           h3("With this tab you can:"),
-          p(strong("Search"), "for individual species using the search box."),
-          p(strong("Sort"), "species by their scores, rank, or names using the small arrows on top of each column."), 
+          p(strong("Search"), "for individual species using the search box"),
+          p(strong("Sort"), "species by their scores, rank, or names using the small arrows on top of each column"), 
           p(strong("Filter"), "species using the boxes at the top of each column"),
           p(strong("Create"), "your EDGE checklist by clicking on species"),
           p(strong("Download"), "your EDGE checklist"),
@@ -105,7 +105,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
           top=180,left=300,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
       )
     ),
-          absolutePanel(img(src="banner7.png",height="100%",width="100%"),top=51,left=15,right=15),
+          absolutePanel(img(src="banner7.jpg",height="100%",width="100%"),top=51,left=15,right=15),
       absolutePanel(strong("#12"),"Northern Bald Ibis",align="right",style="color: #FDFEFE;", top=52, right=30),
       absolutePanel("Ⓒ Rafa Benjumea - Ecotono Birding",align="right",style="color: #FDFEFE;font-weight: 100", top=70, right=30)
     ),
