@@ -25,15 +25,14 @@ shinyUI(fluidPage(tags$style(type="text/css",
         h2(em("Finding the world's most extraordinary species"),align="center"),
         br(),
         br(),
-        p("Bird EDGE scores help to prioritize conservation effort towards the world’s most unique and endangered birds.",strong ("Evolutionary Distinctiveness (ED Score)"),"is a measure of how unique a species is based on the number and evolutionary distance of living relatives. A recently diverged species that has many close relatives, such as most gulls (blue branches in the tree on the left), has low Evolutionary Distinctiveness. Species that diverged early in their evolutionary history and have few (or no) living relatives, such as the Hoatzin (red branch), have a high Evolutionary Disctinctiveness."),
-        p(strong("EDGE Score"),"combines the",strong("Evolutionary Disctinctivness (ED)"),"score with how",strong("Globally Endangered (GE)"),"a species is. The latter is determined by the", 
-          a(href="http://www.iucnredlist.org/", target="_blank",strong("IUCN Red List of Threatened Species."))),
-          p("Abundant species with many close relatives have the", strong("lowest EDGE scores"),"while critically endangered species that have few (or no) close relatives have the",strong("highest EDGE scores."),"Species with high EDGE scores are likely some of the most memorable lifers for any birder, as they often hard to find and extraordinary in the way they look or behave."),
-        p("You can find out which species in your life list have the highest EDGE scores using this web app. To do this, you can upload your eBird checklist. If you don not use eBird to keep track of your sightings, you can use the 'Explore' tab, to browse and select from the complete list of 9,993 bird species.")
+        p("Bird EDGE scores help to prioritize conservation effort towards the world’s most unique and endangered birds.",strong ("Evolutionary Distinctiveness (ED Score)"),"is a measure of how unique a species is based on the number and evolutionary distance of living relatives. A recently diverged species that has many close relatives, such as most gulls (blue branches in the tree on the left), has low Evolutionary Distinctiveness. Species that diverged early in their evolutionary history and have few (or no) living relatives, such as the Hoatzin (red branch), have a high Evolutionary Distinctiveness."),
+        p(strong("EDGE Score"),"combines the",strong("Evolutionary Distinctiveness (ED)"),"score with how",strong("Globally Endangered (GE)"),"a species isbased on the", 
+          a(href="http://www.iucnredlist.org/", target="_blank",strong("IUCN Red List of Threatened Species.")),"Abundant species with many close relatives have the", strong("lowest EDGE scores"),"while critically endangered species that have few (or no) close relatives have the",strong("highest EDGE scores."),"Species with high EDGE scores are likely some of the most memorable lifers for any birder, as they are often hard to find and extraordinary in the way they look or behave."),
+        p("You can find out which species in your life list have the highest EDGE scores using this web app. To do this, you can upload your eBird checklist. If you do not use eBird to keep track of your sightings, you can use the 'Explore' tab, to browse and select from the complete list of 9,993 bird species.")
         ,top=180,left=320,right=15,width="auto",height="auto",style="min-width:500px;max-width:1000px; padding:24px; border-bottom: 2px solid #; background: #EAECEE;"),    
-        absolutePanel(img(src="banner1.png",height="100%",width="100%"),top=51,left=15,right=15),
-        absolutePanel(strong("#8"),"Philippine Eagle",align="right",style="color: #FDFEFE;",top=52,right=22),
-      absolutePanel("Ⓒ Alain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=70,right=22)
+            absolutePanel(img(src="banner8.jpg",height="100%",width="100%"),top=51,left=15,right=15),
+      absolutePanel(strong("#894"),"Red-tailed Tropicbird",align="right",style="color: #FDFEFE;",top=52,right=22),
+      absolutePanel("Ⓒ Simon Valdez-Juarez",align="right",style="color: #FDFEFE;font-weight: 100",top=70,right=22)
        ),
     
     ### New tab
@@ -71,9 +70,9 @@ shinyUI(fluidPage(tags$style(type="text/css",
           top=180,left=300,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
         )
       ),
-      absolutePanel(img(src="banner8.jpg",height="100%",width="100%"),top=51,left=15,right=15),
-      absolutePanel(strong("#894"),"Red-tailed Tropicbird",align="right",style="color: #FDFEFE;",top=52,right=22),
-      absolutePanel("Ⓒ Simon Valdez-Juarez",align="right",style="color: #FDFEFE;font-weight: 100",top=70,right=22)
+                   absolutePanel(img(src="banner6c.png",height="100%",width="100%"),top=51,left=15,right=15),
+             absolutePanel(strong("#66"),"Negros Bleeding-heart",align="right",style="color: #FDFEFE;",top=52,right=22),
+             absolutePanel("Ⓒ Alain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=70,right=22)
     ),
     ### New tab
     
@@ -81,12 +80,12 @@ shinyUI(fluidPage(tags$style(type="text/css",
       strong("Explore"),
       sidebarLayout(
         absolutePanel(
-          h3("In this tab you can also:"),
+          h3("With this tab you can:"),
           p(strong("Search"), "for individual species using the search box."),
           p(strong("Sort"), "species by their scores, rank, or names using the small arrows on top of each column."), 
           p(strong("Filter"), "species using the boxes at the top of each column"),
-          p(strong("Create"), "your own EDGE checklist by clicking on species"),
-          p(strong("Download"), "your own EDGE checklist"),
+          p(strong("Create"), "your EDGE checklist by clicking on species"),
+          p(strong("Download"), "your EDGE checklist"),
           p("Get",strong("PD"),"score of your checklist"),
           br(),
           downloadButton("downloadData", "Download my checklist",style="width:246px"),
@@ -116,17 +115,16 @@ shinyUI(fluidPage(tags$style(type="text/css",
       strong("Help the birds!"),
                          verticalLayout(
                absolutePanel(
-                 h2(em("Meet Kahil Panopio"),align="center"),
+                 h2(em("Saving the world's most extraordinary birds"),align="center"),
                  img(src="Kahlil-Eagles.jpg",height="100%",width="100%"),
                  br(),
                  br(),
-                 p("The", a(href="http://edgeofexistence.org/birds/species_info.php?id=1948", target="_blank", strong("Philippine Eagle")),"was never common within its small range confined to just four islands of the Philippines. Habitat destruction and hunting further reduced the range and numbers of this critically endangered species."), 
-                 p("This majestic bird was considered extirpated from most of its former range in Luzon, where there had been no sightings since 1978. Fortunately, extensive surveys in 2014 found a small population in Mt. Mingan."), 
-                 p("EDGE fellow Kahlil Panopio and Haribon, a local NGO, identified critical habitat and gathered the support of the local communities and governments to protect it. Thanks to their efforts, 3 years later 8,227 hectares of critical habitat will soon be declared a protected area."), 
+                 p("The", a(href="http://edgeofexistence.org/birds/species_info.php?id=1948", target="_blank", strong("Philippine Eagle")),"was never common within its small range confined to just four islands of the Philippines. Habitat destruction and hunting further reduced the range and numbers of this critically endangered species."),
+                 p("EDGE fellow Kahlil Panopio and Haribon, a local NGO, identified critical habitat and gathered the support of the local communities and governments. Thanks to their efforts, 8,227 hectares of critical habitat will soon be declared a protected area."), 
                  p("The", a(href="http://www.zsl.org/", "Zoological Society of London (ZSL)"), "helps to fund this and similar ",a(href="http://edgeofexistence.org/conservation/fellows_list.php", target="_blank", strong("grassroots")), "conservation projects directed towards the world’s most unique and most threatened species."),
                  h3("Join the EDGE challenge",align="center"),
                  br(),
-                 p("You can", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("DONATE")),"that amount to help our conservaiton efforts, so future generations also get a chance enjoy the world's most extraordinary birds!,then challenge fellow birders to find out who has the highest EDGE score"),
+                 p("You can", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("DONATE")),"that amount to help our conservation efforts, so future generations also get a chance enjoy the world's most extraordinary birds!, then challenge fellow birders to find out who has the highest EDGE score"),
                  p("Click one of the buttons below to find out the sum of your top 5 EDGE species scores." ),
                  actionButton("action3", "eBird checklists",style="width:239px"),
                  actionButton("action2", "Manually entered checklists",style="width:239px"),
@@ -139,10 +137,9 @@ shinyUI(fluidPage(tags$style(type="text/css",
                  p("This App was developed by",a(href="https://www.sfu.ca/biology/people/profiles/svaldez.html", target="_blank", strong("Simón Valdez-Juarez")),"and",a(href="http://sebpardo.github.io/", target="_blank", strong("Sebastián Pardo"))),
                   top=100,left=15,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"
                )),
-             absolutePanel(img(src="banner6c.png",height="100%",width="100%"),top=51,left=15,right=15),
-             absolutePanel(h2(em("Saving the world's most extraordinary birds"),align="center",style="color: #FDFEFE;"),top=58,left=200,right=15),
-             absolutePanel(strong("#66"),"Negros Bleeding-heart",align="right",style="color: #FDFEFE;",top=52,right=22),
-             absolutePanel("Ⓒ Alain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=70,right=22)
+                       absolutePanel(img(src="banner1.png",height="100%",width="100%"),top=51,left=15,right=15),
+                 absolutePanel(strong("#8"),"Philippine Eagle",align="right",style="color: #FDFEFE;",top=52,right=22),
+                 absolutePanel("Ⓒ Alain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=70,right=22)
              )
              )
   ))
