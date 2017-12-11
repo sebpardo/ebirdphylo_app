@@ -22,7 +22,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
       strong("About EDGE Scores"),
       absolutePanel(img(src="edgetree3.png",height=420,width="auto"),top=240,left=15,bottom=40,right=500),
       absolutePanel(
-        h2(em("Finding the world's most extraordinary species"),align="center"),
+        h2(em("Finding the world's most extraordinary birds"),align="center"),
         br(),
         br(),
         p("Bird EDGE scores help to prioritize conservation effort towards the world’s most unique and endangered birds.",strong ("Evolutionary Distinctiveness (ED Score)"),"is a measure of how unique a species is based on the number and evolutionary distance of living relatives. A recently diverged species that has many close relatives, such as most gulls (blue branches in the tree on the left), has low Evolutionary Distinctiveness. Species that diverged early in their evolutionary history and have few (or no) living relatives, such as the Hoatzin (red branch), have a high Evolutionary Distinctiveness."),
