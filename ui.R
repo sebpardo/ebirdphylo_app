@@ -38,7 +38,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
     ### New tab
     
     tabPanel(
-      strong("Upload your eBird checklist"),
+      strong("Upload my eBird checklist"),
       sidebarLayout(
        absolutePanel(
           h3("Upload file"),
@@ -64,15 +64,15 @@ shinyUI(fluidPage(tags$style(type="text/css",
           # hr(),
           ,top=180,left=15,width=300,height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),
         absolutePanel(
-          h2(em("Your EDGE species checklist:"),align="center"),
+          h2(em("My EDGE species checklist:"),align="center"),
           tableOutput('summary.tab'),
           DT::dataTableOutput('phylo.results'),
           top=180,left=300,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
         )
       ),
-                   absolutePanel(img(src="banner6c.png",height="100%",width="100%"),top=51,left=15,right=15),
-             absolutePanel(strong("#66"),"Negros Bleeding-heart",align="right",style="color: #FDFEFE;",top=52,right=22),
-             absolutePanel("Ⓒ Alain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=70,right=22)
+                   absolutePanel(img(src="banner9.jpg",height="100%",width="100%"),top=51,left=15,right=15),
+             absolutePanel(strong("#290"),"Hooded Plover",align="right",style="color: #FDFEFE;",top=102,right=22),
+             absolutePanel("Ⓒ Alice Domalik",align="right",style="color: #FDFEFE;font-weight: 100",top=120,right=22)
     ),
     ### New tab
     
@@ -117,10 +117,10 @@ shinyUI(fluidPage(tags$style(type="text/css",
                absolutePanel(
                  h2(em("Saving the world's most extraordinary birds"),align="center"),
                  img(src="Kahlil-Eagles.jpg",height="100%",width="100%"),
-                 br(),
+                 p("Kahlil Panopio observes a Philiphinne Eagle. Ⓒ Haribon"),
                  br(),
                  p("The", a(href="http://edgeofexistence.org/birds/species_info.php?id=1948", target="_blank", strong("Philippine Eagle")),"was never common within its small range confined to just four islands of the Philippines. Habitat destruction and hunting further reduced the range and numbers of this critically endangered species."),
-                 p("EDGE fellow Kahlil Panopio and Haribon, a local NGO, identified critical habitat and gathered the support of the local communities and governments. Thanks to their efforts, 8,227 hectares of critical habitat will soon be declared a protected area."), 
+                 p("EDGE fellow Kahlil Panopio and", a(href="http://www.haribon.org.ph/", strong("Haribon")), "a Philippine NGO, identified critical habitat and gathered the support of the local communities and governments. Thanks to their efforts, 8,227 hectares of critical habitat will soon be declared a protected area."), 
                  p("The", a(href="http://www.zsl.org/", "Zoological Society of London (ZSL)"), "helps to fund this and similar ",a(href="http://edgeofexistence.org/conservation/fellows_list.php", target="_blank", strong("grassroots")), "conservation projects directed towards the world’s most unique and most threatened species."),
                  h3("Join the EDGE challenge",align="center"),
                  br(),
