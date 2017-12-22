@@ -17,7 +17,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
   ),
   theme = shinytheme("cerulean"),
   navbarPage(collapsible=TRUE,
-    "EDGE APP",
+    "eEDGEbirds",
     tabPanel(
       strong("About EDGE Scores"),
       absolutePanel(img(src="edgetree3.png",height=420,width="auto"),top=240,left=15,bottom=40,right=500),
@@ -26,14 +26,20 @@ shinyUI(fluidPage(tags$style(type="text/css",
         br(),
         br(),
         p("Bird EDGE scores help to prioritize conservation effort towards the world’s most unique and endangered birds.",strong ("Evolutionary Distinctiveness (ED Score)"),"is a measure of how unique a species is based on the number and evolutionary distance of living relatives. A recently diverged species that has many close relatives, such as most gulls (blue branches in the tree on the left), has low Evolutionary Distinctiveness. Species that diverged early in their evolutionary history and have few (or no) living relatives, such as the Hoatzin (red branch), have a high Evolutionary Distinctiveness."),
-        p(strong("EDGE Score"),"combines the",strong("Evolutionary Distinctiveness (ED)"),"score with how",strong("Globally Endangered (GE)"),"a species isbased on the", 
+        p(strong("EDGE Score"),"combines the",strong("Evolutionary Distinctiveness (ED)"),"score with how",strong("Globally Endangered (GE)"),"a species is based on the", 
           a(href="http://www.iucnredlist.org/", target="_blank",strong("IUCN Red List of Threatened Species.")),"Abundant species with many close relatives have the", strong("lowest EDGE scores"),"while critically endangered species that have few (or no) close relatives have the",strong("highest EDGE scores."),"Species with high EDGE scores are likely some of the most memorable lifers for any birder, as they are often hard to find and extraordinary in the way they look or behave."),
         p("You can find out which species in your life list have the highest EDGE scores using this web app. To do this, you can upload your eBird checklist. If you do not use eBird to keep track of your sightings, you can use the 'Explore' tab, to browse and select from the complete list of 9,993 bird species.")
         ,top=180,left=320,right=15,width="auto",height="auto",style="min-width:500px;max-width:1000px; padding:24px; border-bottom: 2px solid #; background: #EAECEE;"),    
-            absolutePanel(img(src="banner8.jpg",height="100%",width="100%"),top=51,left=15,right=15),
-      absolutePanel(strong("#894"),"Red-tailed Tropicbird",align="right",style="color: #FDFEFE;",top=52,right=22),
-      absolutePanel("Ⓒ Simon Valdez-Juarez",align="right",style="color: #FDFEFE;font-weight: 100",top=70,right=22)
-       ),
+ absolutePanel(img(src="backbannerD.jpg",height="100%",width="100%",style="min-height:70px;min-width:500px;max-height:164px;
+"),top=53,right=15,left=80),
+             absolutePanel("ED Score:",strong("32.47"),align="center",top=55,right=22,style="color: #FDFEFE;"),
+             absolutePanel("UICN Status:",align="center",top=75,right=22,style="color: #FDFEFE;"),
+             absolutePanel(strong("Least Concern"),align="center",top=95,right=22,style="color: #7FFF00;"),
+             absolutePanel(img(src="banner8.jpg",height="100%",width="100%",style="min-height:70px;min-width:500px;max-height:165px;max-width:1305px;
+"),top=53,left=15,right=15),
+             absolutePanel(strong("#894"),"Red-tailed Tropicbird",align="right",top=55,left=22,style="color: #FDFEFE;"),
+              absolutePanel("Ⓒ Simon Valdez-Juarez",align="right",style="color: #FDFEFE;font-weight: 100",top=75,left=22)
+           ),
     
     ### New tab
     
@@ -70,10 +76,16 @@ shinyUI(fluidPage(tags$style(type="text/css",
           top=180,left=300,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
         )
       ),
-                   absolutePanel(img(src="banner9.jpg",height="100%",width="100%"),top=51,left=15,right=15),
-             absolutePanel(strong("#290"),"Hooded Plover",align="right",style="color: #FDFEFE;",top=102,right=22),
-             absolutePanel("Ⓒ Alice Domalik",align="right",style="color: #FDFEFE;font-weight: 100",top=120,right=22)
-    ),
+ absolutePanel(img(src="backbannerD.jpg",height="100%",width="100%",style="min-height:70px;min-width:500px;max-height:164px;"
+                  ),top=53,right=15,left=80),
+             absolutePanel("ED Score:",strong("17.88"),align="center",top=55,right=22,style="color: #FDFEFE;"),
+             absolutePanel("UICN Status:",align="center",top=75,right=22,style="color: #FDFEFE;"),
+             absolutePanel(strong("Vulnerable"),align="center",top=95,right=22,style="color: #FFFF00;"),
+             absolutePanel(img(src="banner9inv.jpg",height="100%",width="100%",style="min-height:70px;min-width:500px;max-height:165px;max-width:1305px;
+                               "),top=53,left=15,right=15),
+             absolutePanel(strong("#290"),"Hooded plover",align="right",top=55,left=22,style="color: #FDFEFE;"),
+             absolutePanel("Ⓒ Alice Domalik",align="right",style="color: #FDFEFE;font-weight: 100",top=75,left=22)
+             ),
     ### New tab
     
     tabPanel(
@@ -105,10 +117,16 @@ shinyUI(fluidPage(tags$style(type="text/css",
           top=180,left=300,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
       )
     ),
-          absolutePanel(img(src="banner7.jpg",height="100%",width="100%"),top=51,left=15,right=15),
-      absolutePanel(strong("#12"),"Northern Bald Ibis",align="right",style="color: #FDFEFE;", top=52, right=30),
-      absolutePanel("Ⓒ Rafa Benjumea - Ecotono Birding",align="right",style="color: #FDFEFE;font-weight: 100", top=70, right=30)
-    ),
+             absolutePanel(img(src="backbannerD.jpg",height="100%",width="100%",style="min-height:70px;min-width:500px;max-height:164px;
+"),top=53,right=15,left=80),
+             absolutePanel("ED Score:",strong("19.51"),align="center",top=55,right=22,style="color: #FDFEFE;"),
+             absolutePanel("UICN Status:",align="center",top=75,right=22,style="color: #FDFEFE;"),
+             absolutePanel(strong("Critically endangered"),align="center",top=95,right=22,style="color: #FF3333;"),
+             absolutePanel(img(src="banner7inv.png",height="100%",width="100%",style="min-height:70px;min-width:500px;max-height:165px;max-width:1305px;
+                               "),top=53,left=15,right=15),
+             absolutePanel(strong("#12"),"Northern Bald Ibis",align="right",top=55,left=22,style="color: #FDFEFE;"),
+             absolutePanel("Ⓒ Rafa Benjumea - Ecotono Birding",align="right",style="color: #FDFEFE;font-weight: 100",top=75,left=22)
+           ),
     ### New tab
     
     tabPanel(
@@ -116,7 +134,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
                          verticalLayout(
                absolutePanel(
                  h2(em("Saving the world's most extraordinary birds"),align="center"),
-                 img(src="Kahlil-Eagles.jpg",height="100%",width="100%"),
+                 img(src="Kahlil-Eagles.jpg",height="90%",width="90%",style="padding:2px; border-bottom: 1px solid #;"),
                  p("Kahlil Panopio observes a Philiphinne Eagle. Ⓒ Haribon"),
                  br(),
                  p("The", a(href="http://edgeofexistence.org/birds/species_info.php?id=1948", target="_blank", strong("Philippine Eagle")),"was never common within its small range confined to just four islands of the Philippines. Habitat destruction and hunting further reduced the range and numbers of this critically endangered species."),
@@ -137,9 +155,16 @@ shinyUI(fluidPage(tags$style(type="text/css",
                  p("This App was developed by",a(href="https://www.sfu.ca/biology/people/profiles/svaldez.html", target="_blank", strong("Simón Valdez-Juarez")),"and",a(href="http://sebpardo.github.io/", target="_blank", strong("Sebastián Pardo"))),
                   top=100,left=15,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"
                )),
-                       absolutePanel(img(src="banner1.png",height="100%",width="100%"),top=51,left=15,right=15),
-                 absolutePanel(strong("#8"),"Philippine Eagle",align="right",style="color: #FDFEFE;",top=52,right=22),
-                 absolutePanel("Ⓒ Alain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=70,right=22)
-             )
+             absolutePanel(img(src="backbannerD.jpg",height="100%",width="100%",style="min-height:70px;min-width:500px;max-height:164px;
+"),top=53,right=15,left=80),
+             absolutePanel("ED Score:",strong("23.64"),align="center",top=55,right=22,style="color: #FDFEFE;"),
+             absolutePanel("UICN Status:",align="center",top=75,right=22,style="color: #FDFEFE;"),
+             absolutePanel(strong("Critically endangered"),align="center",top=95,right=22,style="color: #FF3333;"),
+             absolutePanel(img(src="banner1inv.jpg",height="100%",width="100%",style="min-height:70px;min-width:500px;max-height:165px;max-width:1305px;
+                               "),top=53,left=15,right=15),
+             absolutePanel(strong("#9"),"Philippine Eagle",align="right",top=55,left=22,style="color: #FDFEFE;"),
+             absolutePanel("Ⓒ Alain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=75,left=22)
+  
+         )
              )
   ))
