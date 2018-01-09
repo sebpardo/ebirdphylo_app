@@ -131,32 +131,30 @@ shinyUI(fluidPage(tags$style(type="text/css",
     
     tabPanel(
       strong("Help the birds!"),
-                         verticalLayout(
-               absolutePanel(
-                 h2(em("Saving the world's most extraordinary birds"),align="center"),
-                 img(src="Kahlil-Eagles.jpg",height="90%",width="90%",style="padding:2px; border-bottom: 1px solid #;"),
-                 p("Kahlil Panopio observes a Philiphinne Eagle. Ⓒ Haribon"),
-                 br(),
-                 p("The", a(href="http://edgeofexistence.org/birds/species_info.php?id=1948", target="_blank", strong("Philippine Eagle")),"was never common within its small range confined to just four islands of the Philippines. Habitat destruction and hunting further reduced the range and numbers of this critically endangered species."),
-                 p("EDGE fellow Kahlil Panopio and", a(href="http://www.haribon.org.ph/", strong("Haribon")), "a Philippine NGO, identified critical habitat and gathered the support of the local communities and governments. Thanks to their efforts, 8,227 hectares of critical habitat will soon be declared a protected area."), 
-                 p("The", a(href="http://www.zsl.org/", "Zoological Society of London (ZSL)"), "helps to fund this and similar ",a(href="http://edgeofexistence.org/conservation/fellows_list.php", target="_blank", strong("grassroots")), "conservation projects directed towards the world’s most unique and most threatened species."),
-                 h3("Join the EDGE challenge",align="center"),
-                 br(),
-                 p("You can", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("DONATE")),"that amount to help our conservation efforts, so future generations also get a chance enjoy the world's most extraordinary birds!, then challenge fellow birders to find out who has the highest EDGE score"),
-                 p("Click one of the buttons below to find out the sum of your top 5 EDGE species scores." ),
-                 actionButton("action3", "eBird checklists",style="width:239px"),
-                 actionButton("action2", "Manually entered checklists",style="width:239px"),
-                 verbatimTextOutput("EDSCORE1", placeholder = FALSE),
-                 verbatimTextOutput("EDSCORE2", placeholder = FALSE),
-                 br(),
-                 br(),
-                 p("Find out", a(href="http://edgeofexistence.org/birds/default.php", target="_blank", strong("more about EDGE scores")), "for birds."),
-                 br(),
-                 p("This App was developed by",a(href="https://www.sfu.ca/biology/people/profiles/svaldez.html", target="_blank", strong("Simón Valdez-Juarez")),"and",a(href="http://sebpardo.github.io/", target="_blank", strong("Sebastián Pardo"))),
-                  top=100,left=15,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"
-               )),
+absolutePanel(
+               h3(em("Join the EDGE Challenge!"),align="left"),
+               p("Together we can give future generations a chance enjoy the world's most extraordinary birds! You can help to fund future EDGE fellows by donating to the EDGE program. Use the buttons below to find out the sum of your top 5 EDGE birds scores. After you find your score go", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("here")),"to donate."),
+               actionButton("action3", "eBird checklists",style="width:239px"),
+               actionButton("action2", "Manually entered checklists",style="width:239px"),
+               br(),
+               verbatimTextOutput("EDSCORE1", placeholder = FALSE),
+               verbatimTextOutput("EDSCORE2", placeholder = FALSE),
+               br(),
+               br(),
+               p("Learn", a(href="http://edgeofexistence.org/birds/default.php", target="_blank", strong("more about EDGE scores")), "for birds."),
+               p("This App was developed by",a(href="https://www.sfu.ca/biology/people/profiles/svaldez.html", target="_blank", strong("Simón Valdez-Juarez")),"and",a(href="http://sebpardo.github.io/", target="_blank", strong("Sebastián Pardo"))),
+               top=510,left=15,right=15,width="auto",height="auto",style="min-width:1005px;max-width:1305px; padding:24px; border-bottom: 2px solid #; background: #EAECEE;"
+             ),
+             absolutePanel(
+               h2(em("Saving the world's most extraordinary birds"),align="center"),
+               br(),
+               p("The", a(href="http://www.zsl.org/", strong("Zoological Society of London (ZSL)")), "helps to fund ",a(href="http://edgeofexistence.org/conservation/fellows_list.php", target="_blank", strong("grassroots")), "conservation projects directed towards the world’s most unique and most threatened species, like the Philippines National bird, the Philippine Eagle",em("(Pithecophaga jefferyi).")),
+               p("The", a(href="http://edgeofexistence.org/birds/species_info.php?id=1948", target="_blank", strong("Philippine Eagle")),"was never common within its small range confined to just four islands of the Philippines. Habitat destruction and hunting further reduced the range and numbers of this critically endangered species."),
+               p("EDGE fellow Kahlil Panopio and", a(href="http://www.haribon.org.ph/", strong("Haribon")), "a Philippine NGO, identified remaining critical habitat in Mt.Mingan. Then,worked with local communities and governments to shift attitudes toward conservation of this emblematic bird. Thanks to their efforts, 8,227 hectares of critical habitat will soon be declared a protected area."), 
+                top=220,left=330,right=15,width="auto",height="auto",style="min-width:700px;max-width:990px; padding:24px; border-bottom: 2px solid #; background: #EAECEE;"),
+             absolutePanel(img(src="Kahil-Eagles3.jpg",height=311,width="auto"),top=220,left=15),
              absolutePanel(img(src="backbannerD.jpg",height="100%",width="100%",style="min-height:70px;min-width:500px;max-height:164px;
-"),top=53,right=15,left=80),
+                               "),top=53,right=15,left=80),
              absolutePanel("ED Score:",strong("23.64"),align="center",top=55,right=22,style="color: #FDFEFE;"),
              absolutePanel("UICN Status:",align="center",top=75,right=22,style="color: #FDFEFE;"),
              absolutePanel(strong("Critically endangered"),align="center",top=95,right=22,style="color: #FF3333;"),
@@ -164,7 +162,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
                                "),top=53,left=15,right=15),
              absolutePanel(strong("#9"),"Philippine Eagle",align="right",top=55,left=22,style="color: #FDFEFE;"),
              absolutePanel("Ⓒ Alain Pascua",align="right",style="color: #FDFEFE;font-weight: 100",top=75,left=22)
-  
-         )
              )
-  ))
+             )
+           ))
+
