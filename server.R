@@ -12,6 +12,26 @@ library(shinythemes)
 
 ED <- as.data.frame(edge)
 
+fields <- c("name","Sum")
+# Save a response
+# ---- This is one of the two functions we will change for every storage type ----
+saveData <- function(data) {
+  data <- as.data.frame(t(data))
+  if (exists("responses")) {
+    responses <<- rbind(responses, data)
+  } else {
+    responses <<- data
+  }
+}
+# Load all previous responses
+# ---- This is one of the two functions we will change for every storage type ----
+loadData <- function() {
+  if (exists("responses")) {
+    responses
+  }
+}
+
+
 function(input, output) {
   # save clean data as reactive object that can be used further down
   mydata <- reactive({
@@ -179,5 +199,20 @@ function(input, output) {
       x5<-as.character(x4[1])})
       
   output$EDSCORE1<-Edscore1
-    
+   formData <- reactive({
+    data <- sapply(fields, function(x) input[[x]])
+    data
+  })
+  
+  # When the Submit button is clicked, save the form data
+  observeEvent(input$submit, {
+    saveData(formData())
+  })
+  
+  # Show the previous responses
+  # (update with current response when Submit is clicked)
+  output$responses <- DT::renderDataTable({
+    input$submit
+    loadData()
+  },options=list(searching=FALSE))      
 }
