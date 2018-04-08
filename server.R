@@ -12,6 +12,13 @@ library(shinythemes)
 
 ED <- as.data.frame(edge)
 
+ED$GE[ED$GE == "CR"] <- "Critically Endangered"
+ED$GE[ED$GE == "EN"] <- "Endangered"
+ED$GE[ED$GE == "VU"] <- "Vulnerable"
+ED$GE[ED$GE == "NT"] <- "Near Threatened"
+ED$GE[ED$GE == "LC"] <- "Least Concern"
+ED$GE[ED$GE == "DD"] <- "Data Deficient"
+
 function(input, output) {
   # save clean data as reactive object that can be used further down
   mydata <- reactive({
@@ -44,6 +51,14 @@ function(input, output) {
         } else {
           out <- dplyr::arrange(out, -ED.Score)
         }  
+      
+      out$GE[out$GE == "CR"] <- "Critically Endangered"
+      out$GE[out$GE == "EN"] <- "Endangered"
+      out$GE[out$GE == "VU"] <- "Vulnerable"
+      out$GE[out$GE == "NT"] <- "Near Threatened"
+      out$GE[out$GE == "LC"] <- "Least Concern"
+      out$GE[out$GE == "DD"] <- "Data Deficient"
+      
       out <- rename(out, `Common name` = comName,
                     `Scientific name` = sciName,
                     `ED Score` = ED.Score,
