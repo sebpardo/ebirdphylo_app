@@ -22,7 +22,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
       ("ABOUT EDGE"),
       absolutePanel(img(src="edgetree3.png",height=483,width="auto"),top=420,left=15,bottom=40,right=500),
       absolutePanel(
-        h2(em("Finding the world's most extraordinary birds"),align="center"),
+        h2(em("Finding the world's most extraordinary birds"), align="center"),
         br(),
         br(),
         h3("To highlight the world’s most unique and endangered species, the", a(href="http://www.zsl.org/", strong("Zoological Society of London (ZSL)")), "developed a metric known as", strong("Evolutionary Distinct, Globally Endangered,"), "also known as", strong("EDGE."),
@@ -80,7 +80,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
           # hr(),
           ,top=332,left=15,width=320,height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),
         absolutePanel(
-          h2(em("My EDGE species checklist:"), align="center"),
+          h2(em("My eBird species checklist"), align="center"),
           tableOutput('summary.tab'),
           DT::dataTableOutput('phylo.results'),
           top=332,left=338,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
