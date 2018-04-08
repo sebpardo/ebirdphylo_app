@@ -47,6 +47,7 @@ function(input, output) {
       out <- rename(out, `Common name` = comName,
                     `Scientific name` = sciName,
                     `ED Score` = ED.Score,
+                    `Red List Status` = GE,
                     `EDGE Score` = EDGE.Score,
                     `EDGE Rank` = EDGE.Rank)
     }
@@ -56,7 +57,7 @@ function(input, output) {
     datatable(phyres(),
               options = list(pageLength = 50, 
                              lengthMenu = list(c(10, 25, 50, 100, 500, -1), c(10, 25, 50, 100, 500, "All")),
-                             order = list(list(4, "desc")), 
+                             order = list(list(6, "asc")), 
                              columnDefs = list(list(visible = FALSE, targets = c(0)))),
               filter = list(position="top", clear=FALSE, plain=TRUE)
     )%>% formatRound(c("ED Score","EDGE Score"),digits=3))
@@ -128,11 +129,11 @@ function(input, output) {
   ###Create selectable Original ED file from my ebird 
   output$origTable <- DT::renderDataTable({
     datatable(
-    ED, options = list(pageLength=10,order = list(list(4, "desc")), 
-                      columnDefs = list(list(visible = FALSE, targets = c(0,6)))),
+    ED, options = list(pageLength=10,order = list(list(6, "asc")), 
+                      columnDefs = list(list(visible = FALSE, targets = c(0,7)))),
     selection = list(mode = "multiple"),
     filter=list(position="top",clear=FALSE,plain=TRUE), 
-    colnames=c("","Scientific Name","Common Name","ED Score","EDGE Score","EDGE Rank","Hidden key for outdated names")
+    colnames=c("","Scientific Name","Common Name","ED Score","Red List Status", "EDGE Score","EDGE Rank","Hidden key for outdated names")
     ) %>% formatRound(c("ED.Score","EDGE.Score"),digits=3)
   })
   
@@ -144,10 +145,10 @@ function(input, output) {
   ###Render a new table with selected species
   output$origTableSelected <- DT::renderDataTable({
     datatable(
-      origTable_selected(),colnames=c("My Ranking","Scientific Name","Common Name","ED Score","EDGE Score","EDGE Rank","Hidden key for outdated names"),
-      options = list(dom = "t",order = list(list(4, "des")),
+      origTable_selected(),colnames=c("My Ranking","Scientific Name","Common Name","ED Score", "Red List Status", "EDGE Score","EDGE Rank","Hidden key for outdated names"),
+      options = list(dom = "t",order = list(list(6, "asc")),
                    scrollY = '250px', paging = FALSE ,
-                   columnDefs = list(list(visible = FALSE, targets = c(6)))),
+                   columnDefs = list(list(visible = FALSE, targets = c(7)))),
       selection = list(mode = "multiple"),
       caption = "My EDGE checklist",
       callback=JS("table.on( 'order.dt search.dt', function () {
