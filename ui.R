@@ -32,7 +32,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
                  a(href="http://www.iucnredlist.org/", target="_blank",strong("IUCN Red List of Threatened Species.")),"Abundant species with many close relatives have the", strong("lowest EDGE scores"), "while critically endangered species that have few (or no) close relatives have the",strong("highest EDGE scores.")),
                br(),
                h3("You can find out which bird species in your life list have the highest EDGE scores using this web app. To do this, you can upload your eBird checklist. If you do not use eBird to keep track of your sightings, you can use the 'EXPLORE' tab, to browse and select from the complete EDGE list of 10,894 bird scpecies created with the", a(href="http://datazone.birdlife.org/species/taxonomy", target="_blank",strong("BIrdLife International")),"taxonomy."),
-               top=332,left=338,width="auto",height="auto",style="padding:24px; border-bottom: 2px solid #; background: #EAECEE;"),    
+               top=332,left=338, width="auto", height="auto", style="padding:24px; border-bottom: 2px solid #; background: #EAECEE;"),    
              absolutePanel(img(src="RTTB_04_2018.png",height="100%",width="100%",style="min-height:296px;min-width:1246px;max-height:318px;max-width:1340px;
                                "),top=43,left=15),
                    absolutePanel(img(src="black_patch.png",height="100%",width="100%",style="min-height:45px;min-width:45px;max-height:45;px;max-width:45px;
@@ -78,12 +78,12 @@ shinyUI(fluidPage(tags$style(type="text/css",
           checkboxInput('pd', 'Calculate the total million years of evolution contained in your checklist? (slow, wait a minute or so)', value = FALSE)
           # checkboxInput('allbirds', 'Browse all bird species? (slow, only works if .csv file hasn\'t been loaded)', value = FALSE),
           # hr(),
-          ,top=436,left=15,width=320,height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),
+          ,top=332,left=15,width=320,height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),
         absolutePanel(
-          h2(em("My EDGE species checklist:"),align="center"),
+          h2(em("My EDGE species checklist:"), align="center"),
           tableOutput('summary.tab'),
           DT::dataTableOutput('phylo.results'),
-          top=319,left=338,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
+          top=332,left=338,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
         )
       ),
              absolutePanel(img(src="HOPL_04_2018.png",height="100%",width="100%",style="min-height:296px;min-width:1246px;max-height:318;px;max-width:1340px;
@@ -124,7 +124,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
           p(verbatimTextOutput("pd2", placeholder = FALSE),""),
                     actionButton("action", "(slow, wait a minute or so..)"),
           br(),
-          top=436,left=15,width=320,height="auto",style="padding: 20px; border-bottom: 2px solid #; background: #EAECEE;"),
+          top=332,left=15,width=320,height="auto",style="padding: 20px; border-bottom: 2px solid #; background: #EAECEE;"),
         absolutePanel(
           h2(em(
             "Explore the complete EDGE bird list"),align="center"
@@ -132,7 +132,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
           br(),
           DT::dataTableOutput("origTable"),
           DT::dataTableOutput("origTableSelected"),
-          top=319,left=338,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
+          top=332,left=338,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
       )
     ),
               absolutePanel(img(src="NOBI_04_2018.png",height="100%",width="100%",style="min-height:296px;min-width:1246px;max-height:318;px;max-width:1340px;
@@ -180,14 +180,14 @@ sidebarLayout(
                  br(),
                  p("This App was developed by",a(href="https://www.sfu.ca/biology/people/profiles/svaldez.html", target="_blank", strong("Simón Valdez-Juarez")),"and",a(href="http://sebpardo.github.io/", target="_blank", strong("Sebastián Pardo"))),
                  br(),
-                 top=687,left=15,width=320,height="auto",style="padding: 20px; border-bottom: 2px solid #; background: #EAECEE;"),
+                 top=332,left=15,width=320,height="auto",style="padding: 20px; border-bottom: 2px solid #; background: #EAECEE;"),
                absolutePanel(
                  h2(em("Saving the world's most extraordinary birds"),align="center"),
                  br(),
                  h3("The", a(href="http://www.zsl.org/", strong("Zoological Society of London (ZSL)")), "helps to fund local conservation leaders via the",a(href="http://edgeofexistence.org/conservation/fellows_list.php", target="_blank", strong("EDGE fellows")), "program. This program is directed towards the world’s most unique and most threatened species, such as the",  a(href="http://edgeofexistence.org/birds/species_info.php?id=1948", target="_blank", strong("Philippine Eagle")),em("(Pithecophaga jefferyi).")),
                  h3("The Philippine Eagle was never a common bird within the four islands of the Philippines where it dwells. Habitat destruction and hunting further reduced the range and numbers of this critically endangered bird."),
                  h3("EDGE fellow Kahlil Panopio and", a(href="http://www.haribon.org.ph/", strong("Haribon,")), "a Philippine NGO, identified remaining critical habitat in Mt. Mingan. They worked with local communities and governments to shift attitudes toward conservation of this emblematic bird. Thanks to their efforts, 8,227 hectares of critical habitat will soon be declared a protected area."), 
-                 top=319,left=338,width="auto",height="auto",style=" border-bottom: 2px solid #;padding:24px; background: #EAECEE;")),
+                 top=332,left=338,width="auto",height="auto",style=" border-bottom: 2px solid #;padding:24px; background: #EAECEE;")),
              absolutePanel(img(src="Kahil-Eagles3.jpg",height=315,width="auto"),top=367,left=15),
              absolutePanel(img(src="PHEA_04_2018.png",height="100%",width="100%",style="min-height:296px;min-width:1246px;max-height:318;px;max-width:1340px;
                                "),top=45,left=15),
