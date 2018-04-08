@@ -37,6 +37,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
                                "),top=43,left=15),
                    absolutePanel(img(src="black_patch.png",height="100%",width="100%",style="min-height:45px;min-width:45px;max-height:45;px;max-width:45px;
                                "),top=0,right=0),
+             absolutePanel(h6("App by",a(href="https://www.sfu.ca/biology/people/profiles/svaldez.html", target="_blank", strong("S. Valdez-Juarez")),"&",a(href="http://sebpardo.github.io/", target="_blank", strong("S. Pardo"))),top=940,left=45),
              absolutePanel(h4(strong("# 915")),align="centre",top=75,left=32,style="color: #FDFEFE;"),
              absolutePanel(h4(strong("Red-tailed Tropicbird")),align="right",top=100,left=32,style="color: #FDFEFE;"),
              absolutePanel(h4(em("Phaethon rubricauda")),align="right",style="color: #FDFEFE;font-weight: 100",top=130,left=32),
@@ -176,10 +177,6 @@ sidebarLayout(
                  p("After you find your score go", a(href="http://edgeofexistence.org/support/donation_form.php?donationType=single&causeID=0", strong("here")),"to support EDGE fellows with a donation for the amount of your score."),
                  br(),
                  p("Learn", a(href="http://edgeofexistence.org/birds/default.php", target="_blank", strong("more about EDGE scores")), "for birds."),
-                 br(),
-                 br(),
-                 p("This App was developed by",a(href="https://www.sfu.ca/biology/people/profiles/svaldez.html", target="_blank", strong("Simón Valdez-Juarez")),"and",a(href="http://sebpardo.github.io/", target="_blank", strong("Sebastián Pardo"))),
-                 br(),
                  top=650,left=15,width=320,height="auto",style="padding: 20px; border-bottom: 2px solid #; background: #EAECEE;"),
                absolutePanel(
                  h2(em("Saving the world's most extraordinary birds"),align="center"),
