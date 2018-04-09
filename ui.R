@@ -37,7 +37,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
                                "),top=43,left=15),
                    absolutePanel(img(src="black_patch.png",height="100%",width="100%",style="min-height:45px;min-width:45px;max-height:45;px;max-width:45px;
                                "),top=0,right=0),
-             absolutePanel(h6("App by",a(href="https://www.sfu.ca/biology/people/profiles/svaldez.html", target="_blank", strong("Simón Valdez-Juarez")),"&",br(),a(href="http://sebpardo.github.io/", target="_blank", strong("Sebastián Pardo"))),top=940,left=45, align = "center"),
+             absolutePanel(h5("App by",a(href="https://www.sfu.ca/biology/people/profiles/svaldez.html", target="_blank", strong("Simón Valdez-Juarez")),"&",br(),a(href="http://sebpardo.github.io/", target="_blank", strong("Sebastián Pardo"))),top=940,left=45, align = "center"),
              absolutePanel(h4(strong("# 915")),align="centre",top=75,left=32,style="color: #FDFEFE;"),
              absolutePanel(h4(strong("Red-tailed Tropicbird")),align="right",top=100,left=32,style="color: #FDFEFE;"),
              absolutePanel(h4(em("Phaethon rubricauda")),align="right",style="color: #FDFEFE;font-weight: 100",top=130,left=32),
