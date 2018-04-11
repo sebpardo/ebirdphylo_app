@@ -17,7 +17,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
   ),
   theme = shinytheme("yeti"),
   navbarPage(collapsible=TRUE,
-    "eBird EDGE App", # took header out to fix alignment and text in browser tab
+    h4("EDGE App for eBird"), # took header out to fix alignment and text in browser tab
     tabPanel(
       ("ABOUT EDGE"),
       absolutePanel(img(src="edgetree3.png",height=483,width="auto"),top=420,left=15,bottom=40,right=500),
