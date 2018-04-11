@@ -32,7 +32,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
                  a(href="http://www.iucnredlist.org/", target="_blank",strong("IUCN Red List of Threatened Species.")),"Abundant species with many close relatives have the", strong("lowest EDGE scores"), "while critically endangered species that have few (or no) close relatives have the",strong("highest EDGE scores.")),
                br(),
                h3("You can find out which bird species in your life list have the highest EDGE scores using this app by directly uploading your eBird checklist. If you do not use eBird to keep track of your sightings, you can use the \"Explore\" tab to browse and select from the complete EDGE list of 10,960 bird species, which is based on the", a(href="http://datazone.birdlife.org/species/taxonomy", target="_blank",strong("BirdLife International")),"taxonomy."),
-               top=332,left=338, width="auto", height="auto", style="padding:24px; border-bottom: 2px solid #; background: #EAECEE;"),    
+               top=362,left=338, width="auto", height="auto", style="padding:24px; border-bottom: 2px solid #; background: #EAECEE;"),    
              absolutePanel(img(src="RTTB_04_2018.png",height="100%",width="100%",style="min-height:296px;min-width:1246px;max-height:318px;max-width:1340px;
                                "),top=43,left=15),
                    absolutePanel(img(src="black_patch.png",height="100%",width="100%",style="min-height:45px;min-width:45px;max-height:45;px;max-width:45px;
@@ -184,7 +184,7 @@ sidebarLayout(
                  h3("The", a(href="http://www.zsl.org/", strong("Zoological Society of London (ZSL)")), "helps to fund local conservation leaders via the",a(href="http://edgeofexistence.org/conservation/fellows_list.php", target="_blank", strong("EDGE fellows")), "program. This program is directed towards the world’s most unique and most threatened species, such as the",  a(href="http://edgeofexistence.org/birds/species_info.php?id=1948", target="_blank", strong("Philippine Eagle")),em("(Pithecophaga jefferyi).")),
                  h3("The Philippine Eagle was never a common bird within the four islands of the Philippines where it dwells. Habitat destruction and hunting further reduced the range and numbers of this critically endangered bird."),
                  h3("EDGE fellow Kahlil Panopio and", a(href="http://www.haribon.org.ph/", strong("Haribon,")), "a Philippine NGO, identified remaining critical habitat in Mt. Mingan. They worked with local communities and governments to shift attitudes toward conservation of this emblematic bird. Thanks to their efforts, 8,227 hectares of critical habitat will soon be declared a protected area."), 
-                 top=332,left=338,width="auto",height="auto",style=" border-bottom: 2px solid #;padding:24px; background: #EAECEE;")),
+                 top=362,left=338,width="auto",height="auto",style=" border-bottom: 2px solid #;padding:24px; background: #EAECEE;")),
              absolutePanel(img(src="Kahil-Eagles3.jpg",height=315,width="auto"),top=367,left=15),
              absolutePanel(img(src="PHEA_04_2018.png",height="100%",width="100%",style="min-height:296px;min-width:1246px;max-height:318;px;max-width:1340px;
                                "),top=45,left=15),
