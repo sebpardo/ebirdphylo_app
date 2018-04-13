@@ -1,7 +1,7 @@
-Shiny app to obtain ED and EDGE scores from your eBird data
-===============================================================
-Sebastian Pardo and Simon Valdez-Juarez
+EDGE scores from your eBird data
+=================================
 
-https://sebpardo.shinyapps.io/ebirdphylo_app/
+http://www.ebirdedgeapp.io
 
-Work in progress!
+By Simón Valdez-Juarez and Sebastián Pardo 
+
