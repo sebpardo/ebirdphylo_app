@@ -27,7 +27,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
         br(),
         h3("Use this app to find out which bird species in your life list have the highest",a(href="https://www.edgeofexistence.org/science/", target="_blank", strong("EDGE scores")), ". If you use eBird to keep track of your sightings, simply upload your eBird life list in the \"eBird life list\" tab. If you do not use eBird to keep track of your sightings, you can use the \"Explore\" tab to browse and select from the complete EDGE list of 10,960 bird species in the" 
             ,a(href="http://datazone.birdlife.org/species/taxonomy", target="_blank",strong("BirdLife International")),"taxonomy."),
-               h3("EDGE scores are a product of how", strong("Evolutionary Distinctive (ED)"), "and", strong("Globall Endangered (GE)"),"a bird species is. Evolutionary Distinctiveness is a measure of how unique a species is, based on the number and of living relatives it has, and its evolutionary distance from these relatives. Global Endangerment status for each species is based on the", 
+               h3("EDGE scores are a product of how", strong("Evolutionary Distinctive (ED)"), "and", strong("Globally Endangered (GE)"),"a bird species is. Evolutionary Distinctiveness is a measure of how unique a species is, based on the number and of living relatives it has, and its evolutionary distance from these relatives. Global Endangerment status for each species is based on the", 
                   a(href="http://www.iucnredlist.org/", target="_blank",strong("IUCN Red List of Threatened Species")), "assessments undertaken by BirdLife International, the IUCN Red List Authority for birds."),
               h3("Abundant species that have many close relatives, such as most gulls (blue branches in the tree on the left), have low EDGE scores. Critically Endangered species that have few living relatives, such as the California Condor (red branch), have a high EDGE score."),
               h3("EDGE scores are produced and updated by the", a(href="http://www.zsl.org/", strong("Zoological Society of London (ZSL)")),"to highlight the need to preserve the world’s most unique and endangered species."),
@@ -82,7 +82,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
           # hr(),
           ,top=332,left=15,width=320,height="auto",style="padding: 24px; border-bottom: 2px solid #; background: #EAECEE;"),
         absolutePanel(
-          h2(em("My eBird species checklist"), align="center"),
+          h2(em("My eBird life list"), align="center"),
           tableOutput('summary.tab'),
           DT::dataTableOutput('phylo.results'),
           top=332,left=338,width="auto",height="auto",style="padding: 24px; border-bottom: 2px solid #;"
