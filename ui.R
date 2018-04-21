@@ -25,7 +25,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
         h2(em("Finding the world's most extraordinary birds"), align="center"),
         br(),
         br(),
-        h3("Use this app to find out which bird species in your life list have the highest",a(href="https://www.edgeofexistence.org/science/", target="_blank", strong("EDGE scores")), ". If you use eBird to keep track of your sightings, simply upload your eBird life list in the \"eBird life list\" tab. If you do not use eBird to keep track of your sightings, you can use the \"Explore\" tab to browse and select from the complete EDGE list of 10,960 bird species in the" 
+        h3("Use this app to find out which bird species in your life list have the highest",a(href="https://www.edgeofexistence.org/science/", target="_blank", strong("EDGE scores")), ". If you use eBird to keep track of your sightings, simply upload your eBird data in the \"eBird data\" tab. If you do not use eBird to keep track of your sightings, you can use the \"Explore\" tab to browse and select from the complete EDGE list of 10,960 bird species in the" 
             ,a(href="http://datazone.birdlife.org/species/taxonomy", target="_blank",("BirdLife International")),"taxonomy."),
                h3("EDGE scores are a product of how", strong("Evolutionarily Distinct (ED)"), "and", strong("Globally Endangered (GE)"),"a bird species is. Evolutionary Distinctiveness is a measure of how unique a species is, based on the number and of living relatives it has, and its evolutionary distance from these relatives. Global Endangerment status for each species is based on the", 
                   a(href="http://www.iucnredlist.org/", target="_blank",("IUCN Red List of Threatened Species")), "assessments undertaken by BirdLife International, the IUCN Red List Authority for birds."),
@@ -171,7 +171,7 @@ sidebarLayout(
                  br(),
                  p("Use the buttons below to find out the sum of your",strong("top 5 EDGE birds"), "scores."),
                  br(),
-                 actionButton("action3", "eBird checklists",style="width:239px"),
+                 actionButton("action3", "eBird data",style="width:239px"),
                  actionButton("action2", "Manually entered checklists",style="width:239px"),
                  br(),
                  verbatimTextOutput("EDSCORE1", placeholder = FALSE),
