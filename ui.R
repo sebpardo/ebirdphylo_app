@@ -55,7 +55,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
     ### New tab
     
     tabPanel(
-      ("eBIRD LIFE LIST"),
+      ("eBIRD DATA"),
       sidebarLayout(
        absolutePanel(
           h3("Upload file"),
@@ -67,7 +67,7 @@ shinyUI(fluidPage(tags$style(type="text/css",
             accept = c('text/csv', '.csv')
           ),
           tags$p(
-            "You can obtain a .csv file with your eBird life list by clicking on the following link (Make sure you're logged into eBird):"
+            "You can obtain a .csv file with your eBird data by clicking on the following link (Make sure you're logged into eBird):"
           ),
           tags$a(href = "http://ebird.org/ebird/downloadMyData", target="_blank",
                  "http://ebird.org/ebird/downloadMyData"),
